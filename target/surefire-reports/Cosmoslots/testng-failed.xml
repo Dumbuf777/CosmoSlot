@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Cosmoslots]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" parallel="tests" name="Cosmoslot(failed)" verbose="0">
+    <classes>
+      <class name="com.Cosmoslots.testCases.WithdrawRequests">
+        <methods>
+          <include name="getResult"/>
+          <include name="extentsetup"/>
+          <include name="teardown"/>
+          <include name="reportflush"/>
+          <include name="setup"/>
+          <include name="G_TC_PlayerWithdrawAmount_UsingPaymentMethod"/>
+        </methods>
+      </class> <!-- com.Cosmoslots.testCases.WithdrawRequests -->
+    </classes>
+  </test> <!-- Cosmoslot(failed) -->
+</suite> <!-- Failed suite [Cosmoslots] -->

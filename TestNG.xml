@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Cosmoslots" parallel="tests" thread-count="5">
+
+	<parameter name="browser" value="chrome" />
+	<test name="Cosmoslot" thread-count="5">
+
+		<classes>
+			<!--class name="com.Cosmoslots.testCases.PlayersProfile"/--> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.InvitedPlayers"/--> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.BlockList"/--> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.CountTotalST"/-->  <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.GuestPlayer"/--> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.JackpotWins"/--> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.PlayerDeletionHistory"/--><!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.SystemAnalytics"/--><!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.PlayerSettingScenario"/-->
+			<!--class name="com.Cosmoslots.testCases.PlayerReferralScenario2"/-->
+			<!--class name="com.Cosmoslots.testCases.UserManagement"/--><!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.UserManageTokensHierarchywise"/ --><!--  Run 1.2.4 -->
+            <!--class name="com.Cosmoslots.testCases.UserAcReadOnlyUser"/-->
+			<!--class name="com.Cosmoslots.testCases.UserACDashboardManagement"/ -->
+			<!--class name="com.Cosmoslots.testCases.UserAcStoreManagement"/ -->
+			<!--class name="com.Cosmoslots.testCases.AdminPanelMobileResponsive"></class -->
+			<!--class name="com.Cosmoslots.testCases.Fish.TC_FishGame"></class -->
+			<!--class name="com.Cosmoslots.testCases.Fish.slotGameSpin"></class -->
+			<!--class name="com.Cosmoslots.testCases.MDB_Scenarios"/-->
+			<!--class name="com.Cosmoslots.testCases.MDB_PlayerScenarios" -->
+			<!--class name="com.Cosmoslots.testCases.CashOnlyStore"/-->
+			<!--class name="com.Cosmoslots.testCases.Old_View.Old_View"/-->
+		
+		   <!-- Panakaj -->
+			<!-- class
+			name="com.Cosmoslots.testCases.IDComply.IDComplyVerification"/ -->
+			<!-- class name="com.Cosmoslots.testCases.WalletAdmin"/ -->
+		
+		
+			<!-- paras -->
+			<!-- class name="com.Cosmoslots.testCases.GuestPlayer"/ -->
+			<!-- class name="com.Cosmoslots.testCases.PlayersProfile"/ --><!--  Run 1.2.4 -->
+			<!-- class name="com.Cosmoslots.testCases.MyProfile"/ -->   <!--  Run 1.2.4 -->
+			<!-- class name="com.Cosmoslots.testCases.PurchasesHistory"/ --> <!--  Run 1.2.4 -->
+			<!--class name="com.Cosmoslots.testCases.WithdrawRequests"/-->
+			<!-- class name="com.Cosmoslots.testCases.Announcement" />
+			<class name="com.Cosmoslots.testCases.ChatManagement" / -->
+			<!--class name="com.Cosmoslots.testCases.WithdrawRequests">
+				<methods>
+					<include name="G_TC_PlayerWithdrawAmount_UsingPaymentMethod" />
+					<include name="H_TC_Old_View_Reports" />
+					<include name="Hb_TC_Old_View_Reports_Today" />
+					<include name="Hc_TC_Old_View_Reports_Yesterday" />
+					<include name="Hd_TC_Old_View_Reports_ThisWeek" />
+					<include name="He_TC_Old_View_Reports_LastWeek" />
+				</methods>
+			</class-->
+		</classes>
+	</test>
+</suite>

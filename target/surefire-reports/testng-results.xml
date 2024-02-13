@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-13T10:37:16 IST" name="Cosmoslots" finished-at="2024-02-13T10:41:35 IST" duration-ms="259667">
+    <groups>
+      <group name="website">
+        <method signature="PlayerDeletionHistory.A_TC_PlayerDeletionHistory_Redirect()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="A_TC_PlayerDeletionHistory_Redirect" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+        <method signature="PlayerDeletionHistory.D_TC_PlayerDeletionHistory_DownloadExcel()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="D_TC_PlayerDeletionHistory_DownloadExcel" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+        <method signature="PlayerDeletionHistory.E_TC_PlayerDeletionHistory_Search()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="E_TC_PlayerDeletionHistory_Search" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+      </group> <!-- website -->
+      <group name="admin">
+        <method signature="PlayerDeletionHistory.A_TC_PlayerDeletionHistory_Redirect()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="A_TC_PlayerDeletionHistory_Redirect" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+        <method signature="PlayerDeletionHistory.B_TC_PlayerDeletionHistory_ViewList()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="B_TC_PlayerDeletionHistory_ViewList" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+        <method signature="PlayerDeletionHistory.D_TC_PlayerDeletionHistory_DownloadExcel()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" name="D_TC_PlayerDeletionHistory_DownloadExcel" class="com.Cosmoslots.testCases.PlayerDeletionHistory"/>
+      </group> <!-- admin -->
+    </groups>
+    <test started-at="2024-02-13T10:37:16 IST" name="Cosmoslot" finished-at="2024-02-13T10:41:35 IST" duration-ms="259667">
+      <class name="com.Cosmoslots.testCases.BlockList">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:36:27 IST" name="setup" finished-at="2024-02-13T10:37:16 IST" duration-ms="48424" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="extentsetup()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:16 IST" name="extentsetup" finished-at="2024-02-13T10:37:16 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentsetup -->
+        <test-method signature="A_TC_Block_PlayerData_Country()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:16 IST" name="A_TC_Block_PlayerData_Country" finished-at="2024-02-13T10:37:26 IST" duration-ms="10422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A_TC_Block_PlayerData_Country -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:26 IST" name="getResult" finished-at="2024-02-13T10:37:26 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=A_TC_Block_PlayerData_Country status=SUCCESS method=BlockList.A_TC_Block_PlayerData_Country()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="Ba_TC_Block_PlayerData_Email()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:26 IST" name="Ba_TC_Block_PlayerData_Email" finished-at="2024-02-13T10:37:36 IST" duration-ms="10254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Ba_TC_Block_PlayerData_Email -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:36 IST" name="getResult" finished-at="2024-02-13T10:37:36 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Ba_TC_Block_PlayerData_Email status=SUCCESS method=BlockList.Ba_TC_Block_PlayerData_Email()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="Bc_TC_Block_PlayerData_firstName()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:36 IST" name="Bc_TC_Block_PlayerData_firstName" finished-at="2024-02-13T10:37:46 IST" duration-ms="9030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bc_TC_Block_PlayerData_firstName -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:46 IST" name="getResult" finished-at="2024-02-13T10:37:46 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Bc_TC_Block_PlayerData_firstName status=SUCCESS method=BlockList.Bc_TC_Block_PlayerData_firstName()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="Bd_TC_Block_PlayerData_lastName()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:46 IST" name="Bd_TC_Block_PlayerData_lastName" finished-at="2024-02-13T10:37:54 IST" duration-ms="8482" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bd_TC_Block_PlayerData_lastName -->
+        <test-method signature="Be_TC_Block_PlayerData_phone()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:54 IST" name="Be_TC_Block_PlayerData_phone" finished-at="2024-02-13T10:38:04 IST" duration-ms="10508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Be_TC_Block_PlayerData_phone -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:37:54 IST" name="getResult" finished-at="2024-02-13T10:37:54 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Bd_TC_Block_PlayerData_lastName status=SUCCESS method=BlockList.Bd_TC_Block_PlayerData_lastName()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:04 IST" name="getResult" finished-at="2024-02-13T10:38:05 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Be_TC_Block_PlayerData_phone status=SUCCESS method=BlockList.Be_TC_Block_PlayerData_phone()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="C_TC_Block_ip_create()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:05 IST" name="C_TC_Block_ip_create" finished-at="2024-02-13T10:38:14 IST" duration-ms="9758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- C_TC_Block_ip_create -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:14 IST" name="getResult" finished-at="2024-02-13T10:38:14 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=C_TC_Block_ip_create status=SUCCESS method=BlockList.C_TC_Block_ip_create()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="D_TC_Block_IP_search()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:14 IST" name="D_TC_Block_IP_search" finished-at="2024-02-13T10:38:18 IST" duration-ms="3853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- D_TC_Block_IP_search -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:18 IST" name="getResult" finished-at="2024-02-13T10:38:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=D_TC_Block_IP_search status=SUCCESS method=BlockList.D_TC_Block_IP_search()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="E_TC_Block_IP_status()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:18 IST" name="E_TC_Block_IP_status" finished-at="2024-02-13T10:38:20 IST" duration-ms="2278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E_TC_Block_IP_status -->
+        <test-method signature="F_TC_Block_IP_Edit()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:20 IST" name="F_TC_Block_IP_Edit" finished-at="2024-02-13T10:38:22 IST" duration-ms="2053" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- F_TC_Block_IP_Edit -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:20 IST" name="getResult" finished-at="2024-02-13T10:38:20 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=E_TC_Block_IP_status status=SUCCESS method=BlockList.E_TC_Block_IP_status()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="G_TC_Block_IP_delete()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:22 IST" name="G_TC_Block_IP_delete" finished-at="2024-02-13T10:38:29 IST" duration-ms="6687" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- G_TC_Block_IP_delete -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:22 IST" name="getResult" finished-at="2024-02-13T10:38:22 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=F_TC_Block_IP_Edit status=SUCCESS method=BlockList.F_TC_Block_IP_Edit()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:29 IST" name="getResult" finished-at="2024-02-13T10:38:29 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=G_TC_Block_IP_delete status=SUCCESS method=BlockList.G_TC_Block_IP_delete()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="reportflush()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:38:29 IST" name="reportflush" finished-at="2024-02-13T10:38:29 IST" duration-ms="228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportflush -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.Cosmoslots.testCases.BlockList@7c7b252e]" started-at="2024-02-13T10:41:35 IST" name="teardown" finished-at="2024-02-13T10:41:36 IST" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.Cosmoslots.testCases.BlockList -->
+      <class name="com.Cosmoslots.testCases.PlayerDeletionHistory">
+        <test-method is-config="true" signature="extentsetup()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:29 IST" name="extentsetup" finished-at="2024-02-13T10:38:29 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentsetup -->
+        <test-method signature="A_TC_PlayerDeletionHistory_Redirect()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:29 IST" name="A_TC_PlayerDeletionHistory_Redirect" finished-at="2024-02-13T10:38:32 IST" duration-ms="2650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- A_TC_PlayerDeletionHistory_Redirect -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:32 IST" name="getResult" finished-at="2024-02-13T10:38:32 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=A_TC_PlayerDeletionHistory_Redirect status=SUCCESS method=PlayerDeletionHistory.A_TC_PlayerDeletionHistory_Redirect()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="B_TC_PlayerDeletionHistory_ViewList()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:32 IST" name="B_TC_PlayerDeletionHistory_ViewList" finished-at="2024-02-13T10:38:55 IST" duration-ms="22663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- B_TC_PlayerDeletionHistory_ViewList -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:55 IST" name="getResult" finished-at="2024-02-13T10:38:55 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=B_TC_PlayerDeletionHistory_ViewList status=SUCCESS method=PlayerDeletionHistory.B_TC_PlayerDeletionHistory_ViewList()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="D_TC_PlayerDeletionHistory_DownloadExcel()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:55 IST" name="D_TC_PlayerDeletionHistory_DownloadExcel" finished-at="2024-02-13T10:38:57 IST" duration-ms="2093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- D_TC_PlayerDeletionHistory_DownloadExcel -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:57 IST" name="getResult" finished-at="2024-02-13T10:38:57 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=D_TC_PlayerDeletionHistory_DownloadExcel status=SUCCESS method=PlayerDeletionHistory.D_TC_PlayerDeletionHistory_DownloadExcel()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method signature="E_TC_PlayerDeletionHistory_Search()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:38:57 IST" name="E_TC_PlayerDeletionHistory_Search" finished-at="2024-02-13T10:39:01 IST" duration-ms="3873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E_TC_PlayerDeletionHistory_Search -->
+        <test-method signature="F_TC_PlayerDeletionHistory_ViewDeletedPlayerDetails()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:39:01 IST" name="F_TC_PlayerDeletionHistory_ViewDeletedPlayerDetails" finished-at="2024-02-13T10:41:35 IST" duration-ms="154734" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- F_TC_PlayerDeletionHistory_ViewDeletedPlayerDetails -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:39:01 IST" name="getResult" finished-at="2024-02-13T10:39:01 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=E_TC_PlayerDeletionHistory_Search status=SUCCESS method=PlayerDeletionHistory.E_TC_PlayerDeletionHistory_Search()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:41:35 IST" name="getResult" finished-at="2024-02-13T10:41:35 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=F_TC_PlayerDeletionHistory_ViewDeletedPlayerDetails status=SUCCESS method=PlayerDeletionHistory.F_TC_PlayerDeletionHistory_ViewDeletedPlayerDetails()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="reportflush()[pri:0, instance:com.Cosmoslots.testCases.PlayerDeletionHistory@47eaca72]" started-at="2024-02-13T10:41:35 IST" name="reportflush" finished-at="2024-02-13T10:41:35 IST" duration-ms="51" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportflush -->
+      </class> <!-- com.Cosmoslots.testCases.PlayerDeletionHistory -->
+    </test> <!-- Cosmoslot -->
+  </suite> <!-- Cosmoslots -->
+</testng-results>
