@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import com.Cosmoslots.ENUM.Constant;
 import com.Cosmoslots.ENUM.LobbyEnum;
 import com.Cosmoslots.pageObjects.CommonCosmo;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -23,7 +23,7 @@ import com.Cosmoslots.utilities.BaseClass;
  */
 public class MDB_Scenarios extends BaseClass {
 	
-	private LobbyPage lp;
+	private LobbyPage_Old lp;
 	private UserPage up;
 	private CommonCosmo cc;
 	String store="store-25179";
@@ -35,7 +35,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> Gameplay");
 		test.info("As an admin I should be able to create MBD when event type is spins");
 		gotoTab(driver, 0);
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -71,7 +71,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> Gameplay with custom date");
 		test.info("As an admin I should be able to create MBD when event type is game with custom date");
 		gotoTab(driver, 0);
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -112,7 +112,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> Login");
 		test.info("As an admin I should be able to create MBD when event type is login");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -149,7 +149,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> Login");
 		test.info("As an admin I should be able to create MBD when event type is login with custom date");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -191,7 +191,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> LossMaking");
 		test.info("As an admin I should be able to create MBD when event type is LossMaking");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -225,7 +225,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> Purchase - Deposit amount ");
 		test.info("As an admin I should be able to create MBD when event type is purchase deposit amount");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -264,7 +264,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("MBD -> Purchase - Deposit amount with custom date");
 		test.info("As an admin I should be able to create MBD when event type is purchase deposit amount");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -308,7 +308,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("Multiple Deposit Bonus -> package purchase ");
 		test.info("As an admin I should be able to create MBD when event type is purchase - package");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		
@@ -345,7 +345,7 @@ public class MDB_Scenarios extends BaseClass {
 		test= extentCreateTest("MBD -> Purchase - Package with custom date");
 		test.info("As an admin I should be able to create MBD when event type is purchase package with custom date");
 		
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		up = new UserPage(driver);
 		cc = new CommonCosmo(driver);
 		

@@ -18,7 +18,7 @@ import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.WithdrawRequest;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.PurchaseHistory;
 import com.Cosmoslots.utilities.BaseClass;
@@ -330,7 +330,7 @@ public class WalletAdmin extends BaseClass {
 	public void VerifyPaymentInAdmin_WalletDeposit(String player, String str) throws IOException, InterruptedException {
 		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		PurchaseHistory ph = new PurchaseHistory(driver);
 
 		BaseClass.gotoTab(driver, 0);
@@ -661,7 +661,7 @@ public class WalletAdmin extends BaseClass {
 
 		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		BaseClass.gotoTab(driver, 0);
 		driver.navigate().refresh();
@@ -741,7 +741,7 @@ public class WalletAdmin extends BaseClass {
 		PurchaseHistory ph = new PurchaseHistory(driver);
 
 		GuestPlayers gp = new GuestPlayers(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		BaseClass.gotoTab(driver, 0);
 		driver.navigate().refresh();
 

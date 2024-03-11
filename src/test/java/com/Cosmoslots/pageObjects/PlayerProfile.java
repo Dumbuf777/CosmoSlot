@@ -1,7 +1,6 @@
 package com.Cosmoslots.pageObjects;
 
 import java.time.Duration;
-import java.util.Map;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,7 +23,6 @@ import org.openqa.selenium.WebElement;
 public class PlayerProfile {
 
 	WebDriver ldriver;
-	private Map<String, String> data;
 	private WebDriver driver;
 	private int timeout = 15;
 	public static ExtentTest test;
@@ -545,7 +543,7 @@ public class PlayerProfile {
 		PlayerProfile.click();
 		explicitWait(ldriver, Searchbox, 3000);
 		Search_Items(playerID);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		WebElement EyeIcon1 = ldriver
 				.findElement(By.xpath("(//*[contains(text(),'" + playerID + "')]//following::a[@title=\"View\"])[1]"));
 		explicitWait(ldriver, EyeIcon1, 5000);
@@ -1114,12 +1112,7 @@ public class PlayerProfile {
 		}
 		return this;
 	}
-
-	public PlayerProfile clearfilter() {
-		ClearFilter.click();
-		return this;
-	}
-
+	
 	/**
 	 * Verify that the page loaded completely.
 	 *
@@ -1145,6 +1138,165 @@ public class PlayerProfile {
 				return d.getCurrentUrl().contains(pageUrl);
 			}
 		});
+		return this;
+	}
+//Pankaj	
+//Advance filter
+	public PlayerProfile clearfilter() {
+		ClearFilter.click();
+		return this;
+	}
+
+	@FindBy(xpath = "//h3[text()='Search Player']")
+	@CacheLookup
+	public WebElement searchPlayerLabel;
+
+	public boolean verifysearchPlayerLabel() {
+
+		return searchPlayerLabel.isDisplayed();
+	}
+	
+	@FindBy(xpath = "//button//span[contains(text(),\"Advance Filter\")]")
+	@CacheLookup
+	private WebElement advanceFilter;
+    
+    public PlayerProfile clickAdvanceFilter() throws InterruptedException {
+
+    	advanceFilter.click();
+		//test.info("Clicked on Advance Filter");
+		Thread.sleep(2000);
+		return this;
+	}
+      
+    public PlayerProfile searchElementClick(String val, String sign) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-label[text()='" + val + "']//preceding::mat-select[1]")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'" + sign + "')]")).click();
+		Thread.sleep(1000);
+		return this;
+	}
+	
+	public PlayerProfile pageScroll(String state) throws InterruptedException {
+
+		if (state.equalsIgnoreCase("up")) {
+			ldriver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.HOME);
+		} else {
+			ldriver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
+		}
+		Thread.sleep(2000);
+
+		return this;
+	}
+
+	public PlayerProfile ClickLastRule(String c) throws InterruptedException {
+		ldriver.findElement(By.xpath("(//button[@type='button'][text()=' Rule '])[last()]")).click();
+
+		ldriver.findElement(
+				By.xpath("(//input[@value='" + c.toLowerCase() + "']//following::label[text()='" + c + "'])[last()]"))
+				.click();
+		Thread.sleep(1000);
+		return this;
+	}
+	
+	public PlayerProfile ClickFirstRuleset(String c) throws InterruptedException {
+		ldriver.findElement(By.xpath("(//button[@type='button'][text()=' Ruleset '])[1]")).click();
+		ldriver.findElement(
+				By.xpath("(//input[@value='" + c.toLowerCase() + "']//following::label[text()='" + c + "'])[last()]"))
+				.click();
+		Thread.sleep(2000);
+		ldriver.findElement(By.xpath(
+				"(//p[contains(text(),'ruleset')]//preceding-sibling::query-builder//button[text()=' Rule '])[last()]"))
+				.click();
+		Thread.sleep(1000);
+		return this;
+	}
+
+	public PlayerProfile searchOperationClick(String val) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("(//input[@value='" + val + "'])[last()]")).click();
+		Thread.sleep(1000);
+		return this;
+	}
+	
+	public PlayerProfile searchUser(String val) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-select[@id='Role']")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'POS')]")).click();
+		Thread.sleep(2000);
+		ldriver.findElement(By.xpath("//mat-select[@id='User']")).click();
+		Thread.sleep(1000);
+		WebElement w = ldriver.findElement(By.xpath("//span[contains(text(),'" + val + "')]"));
+		w.click();
+		Thread.sleep(1000);
+		return this;
+	}
+
+	public PlayerProfile searchStore(String str) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-select[@id='Store']")).click();
+		Thread.sleep(1000);
+//		sel.click(ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'POS')]")));
+//		Thread.sleep(2000);
+//		sel.click(ldriver.findElement(By.xpath("//mat-select[@id='User']")));
+//		Thread.sleep(1000);
+//		sel.setText(ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'" + str + "')]")), str);
+		ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'" + str + "')]")).click();
+		return this;
+	}
+
+	public PlayerProfile searchCountry(String str) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-select[@id='Country']")).click();
+//		Thread.sleep(1000);
+//		sel.click(ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'POS')]")));
+//		Thread.sleep(2000);
+//		sel.click(ldriver.findElement(By.xpath("//mat-select[@id='User']")));
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-option//span[text()=' " + str + " ']")).click();
+		return this;
+	}
+
+	public PlayerProfile searchState(String c, String s) throws InterruptedException {
+		ldriver.findElement(By.xpath("(//mat-select[@id='Country']//following::mat-select[@id='Country'])[1]")).click();
+		ldriver.findElement(By.xpath("//mat-option//span[text()=' " + c + " ']")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-select[@id='State']")).click();
+		Thread.sleep(3000);
+		ldriver.findElement(By.xpath("//span[contains(text(),'" + s + "')]")).click();
+		Thread.sleep(1000);
+		return this;
+	}
+	public PlayerProfile selectFilterDate(String date, String yr) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-label[text()='" + date + "']//preceding::mat-select[1]")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-option//span[contains(text(),'>')]")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(
+				By.xpath("(//mat-label[text()='" + date + "']//following::button[@aria-label='Open calendar'])[1]"))
+				.click();
+		// driver.findElement(By.xpath("//mat-label[text()='" + date +
+		// "']//preceding::input[1]")).click();
+
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//button[contains(@class,\"mat-calendar-period-button\")]")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//div[text()=' " + yr + " ']")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//div[text()=' JAN ']")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//div[text()=' 1 ']")).click();
+		Thread.sleep(1000);
+		return this;
+	}
+
+	public PlayerProfile searchTags(String val) throws InterruptedException {
+
+		ldriver.findElement(By.xpath("//mat-select[@id='Tags']")).click();
+		Thread.sleep(1000);
+		ldriver.findElement(By.xpath("//mat-option//span[text()='" + val + "']")).click();
 		return this;
 	}
 

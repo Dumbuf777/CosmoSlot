@@ -14,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.poi.hssf.record.PageBreakRecord.Break;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -33,7 +34,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -43,39 +43,34 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 import com.Cosmoslots.pageObjects.LoginPage;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.model.Media;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.github.javafaker.Faker;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.DiscoveryStrategy.Explicit;
 
 public class BaseClass extends ExtentManager{
 
-	static ReadConfig readconfig=new ReadConfig();
+	static ReadConfig readconfig = new ReadConfig();
 	public String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 	
-	public String AdminURL=readconfig.getAdminURL();
-	public String WebURL=readconfig.getWebURL();
-	public String username=readconfig.getUsername();
-	public String password=readconfig.getPassword();
-	public String GameiumUsername=readconfig.getGameiumUsername();
-	public String MasterUsername=readconfig.getMasterUsername();
-	public String DistributorUsername=readconfig.getDistributorUsername();
-	public String SubdistributorUsername=readconfig.getSubdistributorUsername();
-    public String StoreUsername=readconfig.getStoreUsername();
-    public String POSUsername=readconfig.getPOSUsername();
-	public String Playerid=readconfig.getPlayerId();
-	public String Playerpass=readconfig.getPlayerPass();
-	public static String UploadImage=readconfig.getImgUrl();
-	public static String UploadImage1=readconfig.getImgUrl1();
-	public String baseAPIURL=readconfig.getBaseAPIURL();
+	public String AdminURL = readconfig.getAdminURL();
+	public static String WebURL = readconfig.getWebURL();
+	public String username = readconfig.getUsername();
+	public String password = readconfig.getPassword();
+	public String GameiumUsername = readconfig.getGameiumUsername();
+	public String MasterUsername = readconfig.getMasterUsername();
+	public String DistributorUsername = readconfig.getDistributorUsername();
+	public String SubdistributorUsername = readconfig.getSubdistributorUsername();
+	public String StoreUsername = readconfig.getStoreUsername();
+	public String POSUsername = readconfig.getPOSUsername();
+	public String Playerid = readconfig.getPlayerId();
+	public String Playerpass = readconfig.getPlayerPass();
+	public static String UploadImage = readconfig.getImgUrl();
+	public static String UploadImage1 = readconfig.getImgUrl1();
+	public String baseAPIURL = readconfig.getBaseAPIURL();
 //	public static WebDriver driver;
 //	public ExtentReports extent;
 //	public static ExtentTest test;
@@ -101,7 +96,7 @@ public class BaseClass extends ExtentManager{
 //            options.addArguments("--disable-gpu");
 //            options.addArguments("--disable-dev-shm-usage");
 //            options.addArguments("--no-sandbox");
-			//System.setProperty("webdriver.chrome.driver", readconfig.getChromePath()); 
+//			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath()); 
 			driver = new ChromeDriver(options);
 
 		} else if (br.equals("firefox")) {
@@ -113,7 +108,7 @@ public class BaseClass extends ExtentManager{
 			//System.setProperty("webdriver.ie.driver", readconfig.getIEPath());
 			driver = new InternetExplorerDriver();
 		}else if (br.equals("opera")) {
-			 WebDriverManager.edgedriver().setup();
+			 WebDriverManager.operadriver().setup();
 			//System.setProperty("webdriver.opera.driver", readconfig.getOperaPath());
 			driver = new OperaDriver();
 		} else if (br.equals("edge")) {
@@ -184,7 +179,7 @@ public class BaseClass extends ExtentManager{
 	public void Adminlogin(String user) throws InterruptedException, IOException
 	{
 		test=extentCreateTest("Login in Admin");	
-		LoginPage lp=new LoginPage(driver);
+		LoginPage lp = new LoginPage(driver);
 	
 		lp.setUserName(user);
 		
@@ -244,31 +239,6 @@ public class BaseClass extends ExtentManager{
  
     }
 	
-//    public ExtentReports extentSetup() {
-//
-//			String repName=getClass().getSimpleName()+".html";
-//			
-//			extent = new ExtentReports();
-//			String reportPath = ".//reports//"+repName;
-//			ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
-//			reporter.config().setReportName("Cosmoslots");
-//			reporter.config().setDocumentTitle("Cosmoslots Automation");
-//			reporter.config().setTheme(Theme.DARK);
-//
-//			Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
-//
-//			extent.attachReporter(reporter);
-//			extent.setSystemInfo("Automation Engineer", "Shrikrsuhna Sonkar");
-//			extent.setSystemInfo("Operating System", System.getProperty("os.name"));
-//			extent.setSystemInfo("Operating System Version", System.getProperty("os.version"));
-//			extent.setSystemInfo("Java Version", System.getProperty("java.version"));
-//			extent.setSystemInfo("Browser", capabilities.getBrowserName());
-//			extent.setSystemInfo("Browser Version", capabilities.getVersion());
-//	       // extent.setReportUsesManualConfiguration(true);
-//
-//			return extent;
-//		}
-		
 	
 	public static void openNewTab(WebDriver driver,String url) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -280,31 +250,9 @@ public class BaseClass extends ExtentManager{
         List<String> winHandles = new ArrayList<String>(driver.getWindowHandles());
         Thread.sleep(500);
         driver.switchTo().window(winHandles.get(tabIndex));
+             
     }
 	
-//	public ExtentTest extentCreateTest(String testName) {
-//		test = extent.createTest(testName);
-//		return test;
-//	}
-	
-	
-
-
-//	public void extentReportOpen() throws IOException {
-//		Desktop.getDesktop().browse(new File(System.getProperty("user.dir") + "//reports//report.html").toURI());
-//	}
-
-//	public String takeScreenshot() {
-//		String source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
-//		return source;
-//	}
-//	
-
-//	public Media extentScreenshot() {
-//		Media media = MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot()).build();
-//		return media;
-//	}
-//	
 	public void click(WebDriver driver,WebElement ele) {
 		Actions act=new Actions(driver);
 		act.moveToElement(ele).click().build().perform();
@@ -334,11 +282,6 @@ public class BaseClass extends ExtentManager{
 		return (generatedString2);
 	}
 	
-//	public void GetCurrentDate(String date) {
-//		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy ");
-//		Date Date= new Date();
-//		String date1= dateFormat.format(Date);
-//	}
 	public static String generateOTP() {
 		int randomPin   =(int)(Math.random()*9000)+1000;
 		String otp  =String.valueOf(randomPin);
@@ -400,7 +343,6 @@ public class BaseClass extends ExtentManager{
 		return phonenum;
 	}
 	
-	
 	public void PageReload()
 	{
 		driver.navigate().refresh();
@@ -423,6 +365,7 @@ public class BaseClass extends ExtentManager{
 		wait.until(ExpectedConditions.visibilityOf(element));
 
 	}
+	
 	public void fluentWait(WebDriver driver,WebElement element, int timeOut) {
 	    Wait<WebDriver> wait = null;
 	    try {
@@ -435,16 +378,19 @@ public class BaseClass extends ExtentManager{
 	    }catch(Exception e) {
 	    }
 	}
+	
 	//sendkeys method
 	public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value){
 	new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 	element.sendKeys(value);
 	}
+	
 	//clickable method declared explicitly
 	public static void clickOn(WebDriver driver1, WebElement element, int timeout){
 	new WebDriverWait(driver1, timeout).until(ExpectedConditions.elementToBeClickable(element));// Expectedcondition for the element to be clickable
 	element.click();
 	}
+	
 	public void implicitWait(WebDriver driver, int timeOut)
 	{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

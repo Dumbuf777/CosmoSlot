@@ -172,7 +172,7 @@ public class GuestPlayers {
 
 	// @FindBy(xpath =
 	// "(//mat-label[contains(text(),\"State\")]//preceding::mat-select)[6]")
-	@FindBy(xpath = "//span[text()=\"'user.search-state' | translate\"]")
+	@FindBy(xpath = "//span[text()='Search State']") // span[text()=\"'user.search-state' | translate\"]
 	@CacheLookup
 	private WebElement State;
 
@@ -579,7 +579,7 @@ public class GuestPlayers {
 	public GuestPlayers selectStore(String select) throws InterruptedException {
 		Thread.sleep(1000);
 		Store.click();
-		Thread.sleep(600);
+		Thread.sleep(1000);
 		ldriver.findElement(By.xpath("//span[contains(.,'" + select + "')]")).click();
 		return this;
 	}
@@ -602,9 +602,24 @@ public class GuestPlayers {
 	public GuestPlayers selectparentuser(String select) throws InterruptedException {
 
 		ParentUser.click();
-		Thread.sleep(300);
-		// ldriver.findElement(By.xpath("//span[contains(text(),'"+select+"')]")).click();
+		Thread.sleep(2000);
+		ldriver.findElement(
+				By.xpath("//input[@placeholder='Search Parent User']//following::span[contains(.,'" + select + "')]"))
+				.click();
+		Thread.sleep(1000);
+		// ldriver.findElement(By.xpath("//input[@placeholder='Search Parent
+		// User']//following::span[1]")).click();
+		return this;
+	}
+	
+	public GuestPlayers selectparentuser1(String select) throws InterruptedException {
+
+		ParentUser.click();
+		Thread.sleep(2000);
+		//ldriver.findElement(By.xpath("//input[@placeholder='Search Parent User']//following::span[contains(.,'" + select + "')]")).click();
+		
 		ldriver.findElement(By.xpath("//input[@placeholder='Search Parent User']//following::span[1]")).click();
+		Thread.sleep(1000);
 		return this;
 	}
 
@@ -783,7 +798,7 @@ public class GuestPlayers {
 	public GuestPlayers ClickSave() {
 		JavascriptExecutor jse = (JavascriptExecutor) ldriver;
 		jse.executeScript("arguments[0].click()", save);
-		//save.click();
+		// save.click();
 		return this;
 	}
 
@@ -984,17 +999,31 @@ public class GuestPlayers {
 		LoginFootprint.click();
 		return this;
 	}
+
+	/**
+	 * Click on Create New Button.
+	 *
+	 * @return the GuestPlayers class instance.
+	 */
+	public GuestPlayers clickCreateNewButton() {
+		createNew.click();
+		return this;
+	}
+
+	@FindBy(xpath = "//input[@formcontrolname=\"displayName\"]")
+	@CacheLookup
+	public WebElement displayNameofRegWeb;
+
+	public void SenddisplayName(String Fname) {
+
+		displayNameofRegWeb.clear();
+		displayNameofRegWeb.sendKeys(Fname);
+	}
 	
-	 /**
-     * Click on Create New Button.
-     *
-     * @return the GuestPlayers class instance.
-     */
-    public GuestPlayers clickCreateNewButton() {
-        createNew.click();
+	public GuestPlayers ClickOnSignup() {
+        SignUpBtn.click();
         return this;
     }
-    
-   
+	
 
 }

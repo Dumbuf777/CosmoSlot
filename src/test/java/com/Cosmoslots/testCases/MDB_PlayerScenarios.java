@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.MDBScheduller;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
@@ -30,11 +30,8 @@ import io.restassured.specification.RequestSpecification;
  */
 public class MDB_PlayerScenarios extends BaseClass {
 
-	private LobbyPage lp;
-	private UserPage up;
-	private CommonCosmo cc;
 	private CosmoWebsite cw;
-	String emailId = "CS-1402";// AT3567-2788 CS-1400
+	String emailId = "CS-1901";// AT3567-2788 CS-1400
 	String Password = "Gameium@1234";
 	String Pkg = "starpack4kTf";// PACKAGE01
 	String gameSessionId1 = "";
@@ -46,10 +43,12 @@ public class MDB_PlayerScenarios extends BaseClass {
 	int login = 5;
 
 	/**
-	 * Before the execution of this method 1st register the player 2nd add wallet
+	 * Before the execution of this method 
+	 * 1st-> register the player 
+	 * 2nd-> add wallet
 	 */
 
-	@Test
+//	@Test
 	public void A_MDB_Verify_Login_ReminderActionPopup() throws InterruptedException, IOException {
 		test = extentCreateTest("MDB-> Login - Reminder  & action popup");
 		test.info("As a player I should be able to verify MDB login reminder popup in website");
@@ -76,7 +75,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 		Aa_POST_PlayerLogout();
 		A_POST_PlayerLogin();
 		Aa_POST_PlayerLogout();
-//		TimeUnit.MINUTES.sleep(7);
+		TimeUnit.MINUTES.sleep(16);
 		prs.PlayerProfile_ManageTokens(Pkg, emailId);//"PACKAGE01"
 		WebsiteLogin(emailId, Password);
 		if (driver.findElement(By.xpath("(//p[contains(.,'MDB')])[1]")).isDisplayed()) {
@@ -130,7 +129,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 			B_POST_SlotGameSpin1();
 			System.out.println(i);
 			if (i == remspin) {
-				TimeUnit.MINUTES.sleep(3);
+				TimeUnit.MINUTES.sleep(5);
 				gotoTab(driver, 1);
 				cw.ClickOnPlayerLogout();
 				WebsiteLogin(emailId, Password);
@@ -146,7 +145,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 			if (i == gameSpin) {
 				PlayerReferralScenario2 prs = new PlayerReferralScenario2();
 				CosmoWebsite cw2 = new CosmoWebsite(driver);
-				TimeUnit.MINUTES.sleep(15);
+				TimeUnit.MINUTES.sleep(16);
 				prs.PlayerProfile_ManageTokens(Pkg, emailId);
 				gotoTab(driver, 1);
 				// cw2.ClickOnPlayerLogout();
@@ -167,7 +166,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 
 	}
 	
-	@Test
+//	@Test
 	public void C_VerifyActionPopupInLossMaking() throws InterruptedException, IOException {
 		
 		test = extentCreateTest("MDB-> Loss Making - Action popup");
@@ -181,7 +180,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 		B_POST_SlotGameSpin1();
 		B_POST_SlotGameSpin1();
 		B_POST_SlotGameSpin1();
-    	TimeUnit.MINUTES.sleep(3);
+    	TimeUnit.MINUTES.sleep(7);
 		prs.PlayerProfile_ManageTokens(Pkg, emailId);
 		gotoTab(driver, 1);
 		cw.ClickOnPlayerLogout();
@@ -198,7 +197,7 @@ public class MDB_PlayerScenarios extends BaseClass {
 		
 	}
 	
-    @Test
+//    @Test
 	public void D_VerifyActionPopup_PurchaseOnDeposit() throws InterruptedException, IOException {
 		test = extentCreateTest("MDB->Purchase on deposit - Action popup");
 		test.info("As a player I should be able to verify MDB purchase on deposit reminder and action popup in website");

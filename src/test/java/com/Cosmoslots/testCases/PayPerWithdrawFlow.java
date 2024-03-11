@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.ENUM.ColumnSelectors;
 import com.Cosmoslots.pageObjects.CommonCosmo;
-import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.WithdrawRequest;
@@ -28,7 +27,6 @@ public class PayPerWithdrawFlow extends BaseClass {
 	private WithdrawRequest wr;
 	private CommonCosmo cc;
 	private GuestPlayers gp;
-	private CosmoWebsite cw;
 
 	
 	@Test

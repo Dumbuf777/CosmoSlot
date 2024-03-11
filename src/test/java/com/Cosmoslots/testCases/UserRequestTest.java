@@ -16,7 +16,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
@@ -34,7 +34,7 @@ public class UserRequestTest extends BaseClass{
 	@Test
 	public void A_TC_UserRequest_GF001_Login_AccessControl() throws IOException, InterruptedException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		
@@ -80,7 +80,7 @@ public class UserRequestTest extends BaseClass{
 	@Test
 	public void B_TC_UserRequest_GF001_AddAccessControl() throws IOException, InterruptedException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
@@ -130,7 +130,7 @@ public class UserRequestTest extends BaseClass{
 	@Test
 	public void C_TC_UserRequest_GF001_Search() throws IOException, InterruptedException,NullPointerException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
  	
@@ -177,7 +177,7 @@ public class UserRequestTest extends BaseClass{
 	@Test
 	public void E_TC_UserRequest_GF001_edit() throws IOException, InterruptedException,NullPointerException 
 	{
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		

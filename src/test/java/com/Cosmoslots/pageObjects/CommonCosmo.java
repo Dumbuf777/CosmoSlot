@@ -106,7 +106,7 @@ public class CommonCosmo extends ExtentManager {
 
 	@FindBy(xpath = "//span[text()=\"Bonus save successfully\"]")
 	@CacheLookup
-	public WebElement Validation_Format_AddBonus;
+	public static WebElement Validation_Format_AddBonus;
 
 	@FindBy(xpath = "//span[text()=\"Bonus updated successfully\"]")
 	@CacheLookup
@@ -303,7 +303,7 @@ public class CommonCosmo extends ExtentManager {
 	@FindBy(xpath = "//span[text()=\"Player save successfully\"]")
 	@CacheLookup
 	public static WebElement Validation_Format_Playersavesuccessfully;
-	
+
 	@FindBy(xpath = "//span[text()=\"User save successfully\"]")
 	@CacheLookup
 	public static WebElement Validation_Format_Usersavesuccessfully;
@@ -311,27 +311,27 @@ public class CommonCosmo extends ExtentManager {
 	@FindBy(xpath = "//span[text()=\"Email Id is already in use.\"]")
 	@CacheLookup
 	public static WebElement Validation_EmailIdisalreadyinuse;
-	
+
 	@FindBy(xpath = "//span[text()=\"Chat request save successfully\"]")
 	@CacheLookup
 	public static WebElement Validation_Chatrequestsavesuccessfully;
-	
-	@FindBy(xpath = "//span[text()=\"Notes save successfull\"]")
+
+	@FindBy(xpath = "//span[text()=\"Notes save successfully\"]")
 	@CacheLookup
 	public static WebElement Validation_Notessavesuccessfull;
-	
+
 	@FindBy(xpath = "//div[contains(text(),'KYC')]")
 	@CacheLookup
 	public static WebElement Validation_KYC_Verificatin_Required;
-	
+
 	@FindBy(xpath = "//button[text()='Yes']")
 	@CacheLookup
 	public static WebElement Yes;
-	
+
 	@FindBy(xpath = "//button[text()='Cancel']")
 	@CacheLookup
 	public static WebElement Cancel;
-	
+
 	@FindBy(xpath = "//span[text()='Announcement data save successfully']")
 	public static WebElement Validation_AnnouncementDataSaveSuccessfully;
 	// ------Paras Changes----
@@ -372,7 +372,7 @@ public class CommonCosmo extends ExtentManager {
 		return this;
 
 	}
-	
+
 	public CommonCosmo VerifyErrorMsg(String str) throws InterruptedException {
 		WebElement error = driver.findElement(By.xpath(str));
 		Thread.sleep(700);
@@ -388,7 +388,6 @@ public class CommonCosmo extends ExtentManager {
 		return this;
 
 	}
-	
 
 	// --------All Cosmo Headers-------
 	@FindBy(xpath = "//h3[text()='Contact Us']")
@@ -398,45 +397,120 @@ public class CommonCosmo extends ExtentManager {
 	@FindBy(xpath = "//h3[text()='Player Management']")
 	@CacheLookup
 	public WebElement PlayerManagement_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Player Deletion History']")
 	@CacheLookup
 	public WebElement PlayerDeletionHistory_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Withdraw Requests']")
 	@CacheLookup
 	public WebElement WithdrawRequests_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Create Withdraw Request']")
 	@CacheLookup
 	public WebElement CreateWithdrawRequest_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Purchase History']")
 	@CacheLookup
 	public WebElement PurchaseHistory_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='User Management']")
 	@CacheLookup
 	public WebElement UserManagement_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Store Management']")
 	@CacheLookup
 	public WebElement StoreManagement_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Chat Management']")
 	@CacheLookup
 	public WebElement ChatManagement_Header;
-	
+
 	@FindBy(xpath = "//h3[text()='Jackpot Wins']")
 	@CacheLookup
 	public WebElement JackpotWins_Header;
-	
+
 	@FindBy(xpath = "//h2[contains(.,'Are you sure, ')]")
 	public WebElement toggleVerification_Header;
-	
-	
+
 	@FindBy(xpath = "//span[text()=\"Password has successfully changed\"]")
 	@CacheLookup
 	public static WebElement Validation_Passwordhassuccessfullychanged;
 
+	public static boolean verifyValidation_Format_UserDelete() {
+
+		return Validation_Format_UserDelete.isDisplayed();
+	}
+
+	public By StoreSaved = By.xpath("//span[text()='Store save successfully']");
+
+	public boolean verifyStoreSaved() {
+
+		return ldriver.findElements(StoreSaved).size() > 0;
+	}
+
+	public boolean check(By ele) {
+		return ldriver.findElements(ele).size() > 0;
+	}
+
+	public By StoreUpdatedSuccessfully = By.xpath("//span[text()='Store updated successfully']");
+
+	public CommonCosmo VerifyStoreUpdated(By ele) {
+		if (check(ele)) {
+			test.pass("<b><i>store update validation message</b></i>", extentScreenshot());
+		} else {
+			test.fail("<b><i>store update validation message not displayed</b></i>", extentScreenshot());
+		}
+		return this;
+	}
+
+	@FindBy(xpath = "//span[text()=\"Game Room Configuration save successfully\"]")
+	@CacheLookup
+	public static WebElement Room_Configuration_save;
+	public By jackpotSaved = By.xpath("//span[text()='Jackpot save successfully']");
+
+	public boolean verifyjackpotSaved() {
+        return ldriver.findElements(jackpotSaved).size() > 0;
+	}
+	
+	public By SocialMediaSettingssave = By.xpath("//span[text()=\"Social Media Settings save successfully\"]");
+	
+	public By couponSave = By.xpath("//span[text()='Coupon save successfully']");
+	 
+	
+	public CommonCosmo VerifyData(By ele) {
+        if (check(ele)) {
+            test.pass("<b><i>Data saved successfully message Found</b></i>", extentScreenshot());
+        } else {
+            test.fail("Not Found saved successfully message", extentScreenshot());
+        }
+        return this;
+    }
+	
+
+    public CommonCosmo VerifyDataCheck1(WebElement ele) {
+        if (ele.isDisplayed() == true) {
+            // test.pass("<b><i>Data saved successfully message Found</b></i>",
+            // extentScreenshot());
+            test.pass("<b><i> " + ele.getText() + " </b></i>", extentScreenshot());
+        } else {
+            test.fail("Not Found verify message", extentScreenshot());
+        }
+        return this;
+    }
+    
+    public By jackpotupdated = By.xpath("//span[text()='Jackpot updated successfully']");
+
+    public boolean verifyjackpotupdated() {
+        return ldriver.findElements(jackpotupdated).size() > 0;
+    }
+    
+    @FindBy(xpath = "//span[text()=\"Bonus level updated successfully\"]")
+    @CacheLookup
+    public static WebElement Validation_UpdateLevelBonus;
+    
+    public By Marketingsave = By.xpath("//span[text()='Marketing save successfully']");
+	public By Marketingupdated = By.xpath("//span[text()='Marketing updated successfully']");
+	public By addMarketing = By.xpath("//span[text()='Add Marketing Template']");
+	public By addMarketingHeader = By.xpath("//h3[text()='Add Marketing Template']");
 }

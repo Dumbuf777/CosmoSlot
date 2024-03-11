@@ -22,9 +22,7 @@ public enum XPathEnum {
     STATE_CLEAR("(//label[text()='State']//following::span[@title=\"Clear all\"])[1]"),
     COUNTRY_CLEAR("(//label[text()='Country']//following::span[@title=\"Clear all\"])[1]");
 	
-	
-	
-	
+		
     private final String xpath;
 
     XPathEnum(String xpath) {

@@ -129,7 +129,8 @@ public class ChatManagement extends BaseClass
 	public void C_TC_ChatManagement_CreateChatRequest_NewGuestPlayer() throws InterruptedException, IOException 
 	{
 		test=extentCreateTest("ChatManagement -> Create New Chat -> Select Guest Player");
-		PlayerProfile pp=new PlayerProfile(driver);
+		PlayerProfile pp = new PlayerProfile(driver);
+		CommonCosmo cc = new CommonCosmo(driver);
 
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div//following::i[@class='ri-message-2-line']")).click();
@@ -156,18 +157,19 @@ public class ChatManagement extends BaseClass
 			
 			driver.findElement(By.xpath("//span[text()=\"Send\"]")).click();
 			//Thread.sleep(1000);
+			cc.VerifyDataCheck(cc.Validation_Chatrequestsavesuccessfully);
 			
-			if(driver.findElement(By.xpath("//span[text()=\"Chat request save successfully\"]")).isDisplayed())
-			{
-				test.pass("successfully created chat request with validation message appeared  ",extentScreenshot());
-				Assert.assertTrue(true);
-				Thread.sleep(5000);
-			}
-			else
-			{
-				test.fail("successfully created chat request with validation message not appeared ",extentScreenshot());
-				Assert.assertTrue(false);
-			}
+//			if(driver.findElement(By.xpath("//span[text()=\"Chat request save successfully\"]")).isDisplayed())
+//			{
+//				test.pass("successfully created chat request with validation message appeared  ",extentScreenshot());
+//				Assert.assertTrue(true);
+//				Thread.sleep(5000);
+//			}
+//			else
+//			{
+//				test.fail("successfully created chat request with validation message not appeared ",extentScreenshot());
+//				Assert.assertTrue(false);
+//			}
 		}
 		else
 		{
@@ -184,6 +186,7 @@ public class ChatManagement extends BaseClass
 		test.info("TestCase started As an admin user, i should be able to view (Action) view -> Chat Management");
 		GuestPlayers gp=new GuestPlayers(driver);
 		PlayerProfile pp=new PlayerProfile(driver);
+		CommonCosmo cc = new CommonCosmo(driver);
 
 		if(driver.findElement(By.xpath("//h3[text()=\"Chat Management\"]"))!=null)
 		{	
@@ -248,20 +251,13 @@ public class ChatManagement extends BaseClass
 				
 				BaseClass.gotoTab(driver, 0);
 				
-				driver.findElement(By.xpath("//input[@placeholder=\"Enter tag\"]")).sendKeys("Tags");
+				driver.findElement(By.xpath("//input[@placeholder='Enter Tags']")).sendKeys("Tags");
 				
-				driver.findElement(By.xpath("//textarea[@formcontrolname=\"note\"]")).sendKeys("By Auto");
+				driver.findElement(By.xpath("//textarea[@formcontrolname='note']")).sendKeys("By Auto");
 				Thread.sleep(500);
 				gp.ClickSave();
-				if(cc.Validation_Notessavesuccessfull!=null)
-				{
-					test.pass("Message got - Notes Save Successfully");
-					Thread.sleep(4000);
-				}
-				else
-				{
-					test.fail("Not working");
-				}
+				cc.VerifyDataCheck(cc.Validation_Notessavesuccessfull);
+				
 			}
 			else
 			{

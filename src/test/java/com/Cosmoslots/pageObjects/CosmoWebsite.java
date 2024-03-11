@@ -318,6 +318,7 @@ public class CosmoWebsite extends ExtentManager {
 	 */
 	public CosmoWebsite ClickOnPlayerLogout() throws InterruptedException {
 		// PlayerProfileDd.click();
+		bc.fluentWait(driver, Playerdropdown, 10);
 		Playerdropdown.click();
 		bc.explicitWait(ldriver, PlayerLogoutBtn, 10);
 		PlayerLogoutBtn.click();

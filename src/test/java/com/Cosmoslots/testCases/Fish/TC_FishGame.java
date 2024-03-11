@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
@@ -51,7 +51,7 @@ public class TC_FishGame extends BaseClass {
 		test = extentCreateTest("View Fish Game Details");
 		test.info("TC - As an admin I should be able to view the fish game details like code, name, category and sub-category");
 
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		lp.clicklobbymanagement();
 		Thread.sleep(500);
@@ -83,7 +83,7 @@ public class TC_FishGame extends BaseClass {
 		test = extentCreateTest("View Fish Game Room Configuration");
 		test.info("TC - As an admin I should be able to view the fish room configration in fish game");
 
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		driver.findElement(By.xpath("//a[@title='View Game Room Configuration']")).click();
 		Thread.sleep(3000);
@@ -112,7 +112,7 @@ public class TC_FishGame extends BaseClass {
 	public void Ac_TC_ViewFishGamedashboard() throws InterruptedException {
 		test = extentCreateTest("View Dashboard Icon");
 		test.info("TC - As an admin I should be able to view the ocean bombard dashboard in fish game");
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		// driver.findElement(By.xpath("//a[@title='Back']")).click();
 		Thread.sleep(3000);
@@ -246,7 +246,6 @@ public class TC_FishGame extends BaseClass {
 		String gameName="Ocean Bombard";
 		test = extentCreateTest("Search Fish games");
 		test.info("TC - As an admin I should be able to search game name in the player profile fish game transctions");
-		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
 		
 		gotoTab(driver, 0);

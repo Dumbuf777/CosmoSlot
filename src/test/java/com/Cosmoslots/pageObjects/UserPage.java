@@ -20,12 +20,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.Cosmoslots.utilities.BaseClass;
 
+import implementation.Seleniumimpl;
+
 /**
  * @author shrikrushna.sonkar
  *
  */
 public class UserPage {
 	
+	Seleniumimpl sel;
 
 	BaseClass bc = new BaseClass();
 	public WebDriver ldriver;
@@ -38,6 +41,7 @@ public class UserPage {
 	public UserPage(WebDriver rdriver) {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
+		sel = new Seleniumimpl();
 	}
 
 	@FindBy(xpath = "//span[contains(text(),'User Management')]")
@@ -375,6 +379,7 @@ public class UserPage {
 	@FindBy(xpath = "//button[contains(text(),' Player Custom Package Purchase ')]")
 	@CacheLookup
 	private WebElement PlayerCustomPackagePurchase;
+		
 
 	public UserPage ClickonPlayerCustomPackagePurchase() {
 		PlayerCustomPackagePurchase.click();
@@ -473,6 +478,13 @@ public class UserPage {
 		return this;
 	}
 
+	@FindBy(xpath = "//button[@aria-label='Previous month']")
+	@CacheLookup
+	public static WebElement Previousmonth;
+	@FindBy(xpath = "//button[@aria-label='Next month']")
+	@CacheLookup
+	public static WebElement Nextmonth;
+	
 	public UserPage SelectFromToDate() throws InterruptedException {
 		LocalDate currentDate = LocalDate.now();
 		// Calculate the target date (current date - 35 days)
@@ -484,14 +496,37 @@ public class UserPage {
 		// System.out.println(currentDateString);System.out.println(targetDateString);
 		// CalendarBtn.click();
 		Thread.sleep(1000);
-		ldriver.findElement(By.xpath("//button[@aria-label='Previous month']")).click();
-		Thread.sleep(500);
-		ldriver.findElement(By.xpath("//div[contains(text(),'" + targetDateString + "')]")).click();
-		Thread.sleep(500);
-		ldriver.findElement(By.xpath("//button[@aria-label='Next month']")).click();
-		Thread.sleep(500);
-		ldriver.findElement(By.xpath("//div[contains(text(),'" + currentDateString + "')]")).click();
-		Thread.sleep(500);
+		if (!Previousmonth.getAttribute("class").contains("disabled")) {
+			Previousmonth.click();
+			Thread.sleep(500);
+			Previousmonth.click();
+			Thread.sleep(500);
+			ldriver.findElement(By.xpath("//div[contains(text(),'" + targetDateString + "')]")).click();
+			Thread.sleep(500);
+		}else {
+			Previousmonth.click();
+			Thread.sleep(500);
+			ldriver.findElement(By.xpath("//div[contains(text(),'" + targetDateString + "')]")).click();
+			Thread.sleep(500);
+		}
+		if (!Nextmonth.getAttribute("class").contains("disabled")) {
+			Nextmonth.click();
+			Thread.sleep(500);
+			Nextmonth.click();
+			Thread.sleep(500);
+			ldriver.findElement(By.xpath("//div[contains(text(),'" + currentDateString + "')]")).click();
+			Thread.sleep(500);
+		}else {
+			Nextmonth.click();
+			Thread.sleep(500);
+			ldriver.findElement(By.xpath("//div[contains(text(),'" + currentDateString + "')]")).click();
+			Thread.sleep(500);
+		}
+		
+//		ldriver.findElement(By.xpath("//button[@aria-label='Next month']")).click();
+//		Thread.sleep(500);
+//		ldriver.findElement(By.xpath("//div[contains(text(),'" + currentDateString + "')]")).click();
+//		Thread.sleep(500);
 		return this;
 	}
 	
@@ -1243,6 +1278,29 @@ public class UserPage {
 		return this;
 	}
 	
+	private By userProfileHeader = By.xpath("//h3[text()='User Profile']");
+
+    public boolean verifyUserProfileHeader() {
+        return ldriver.findElements(userProfileHeader).size() > 0;
+    }
+    
+    private By createUserProfileHeader = By.xpath("//h3[text()='Create User Profile']");
+
+    public boolean verifycreateUserProfileHeader() {
+        return ldriver.findElements(createUserProfileHeader).size() > 0;
+    }
+    @FindBy(xpath = "//input[@formcontrolname='registrationCode']")
+    @CacheLookup
+    public WebElement registrationCode;
+
+    public void clickToRegistrationCode(String code) throws InterruptedException {
+        // System.out.println("Access control add button");
+    	
+    	Seleniumimpl sel;
+ //       test.info("registration code = " + code);
+        Thread.sleep(1000);
+
+    }
  
 
 }

@@ -1,8 +1,15 @@
 package com.Cosmoslots.website;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.temporal.TemporalAdjusters;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import com.Cosmoslots.utilities.ReadConfig;
 
 public class demo2 {
 	public static void main(String[] args) throws InterruptedException {
@@ -26,73 +33,42 @@ public class demo2 {
 //        LocalDate startOfLastWeek = startOfWeek.minusDays(7);
 //        LocalDate endOfLastWeek = endOfWeek.minusDays(7);
 //        System.out.println("Last week - Start Date: " + startOfLastWeek + ", End Date: " + endOfLastWeek);
-				        DateRange dateRange = getDateRange();
-		        
-		        System.out.println("Today: " + dateRange.getToday());
-		        System.out.println("Yesterday: " + dateRange.getYesterday());
-		        System.out.println("This week - Start Date: " + dateRange.getStartOfWeek() + ", End Date: " + dateRange.getEndOfWeek());
-		        System.out.println("Last week - Start Date: " + dateRange.getStartOfLastWeek() + ", End Date: " + dateRange.getEndOfLastWeek());
-		    }
 
-		    public static DateRange getDateRange() {
-		        LocalDate today = LocalDate.now();
-		        LocalDate yesterday = today.minusDays(1);
-		        LocalDate startOfWeek = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.SUNDAY));
-		        LocalDate endOfWeek = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY));
-		        LocalDate startOfLastWeek = startOfWeek.minusDays(7);
-		        LocalDate endOfLastWeek = endOfWeek.minusDays(7);
+		ReadConfig readconfig = new ReadConfig();
+		System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
+		WebDriver driver = new ChromeDriver();
 
-		        return new DateRange(today, yesterday, startOfWeek, endOfWeek, startOfLastWeek, endOfLastWeek);
-		    }
-
-		    static class DateRange {
-		        private LocalDate today;
-		        private LocalDate yesterday;
-		        private LocalDate startOfWeek;
-		        private LocalDate endOfWeek;
-		        private LocalDate startOfLastWeek;
-		        private LocalDate endOfLastWeek;
-
-		        public DateRange(LocalDate today, LocalDate yesterday, LocalDate startOfWeek, LocalDate endOfWeek,
-		                         LocalDate startOfLastWeek, LocalDate endOfLastWeek) {
-		            this.today = today;
-		            this.yesterday = yesterday;
-		            this.startOfWeek = startOfWeek;
-		            this.endOfWeek = endOfWeek;
-		            this.startOfLastWeek = startOfLastWeek;
-		            this.endOfLastWeek = endOfLastWeek;
-		        }
-
-		        public LocalDate getToday() {
-		            return today;
-		        }
-
-		        public LocalDate getYesterday() {
-		            return yesterday;
-		        }
-
-		        public LocalDate getStartOfWeek() {
-		            return startOfWeek;
-		        }
-
-		        public LocalDate getEndOfWeek() {
-		            return endOfWeek;
-		        }
-
-		        public LocalDate getStartOfLastWeek() {
-		            return startOfLastWeek;
-		        }
-
-		        public LocalDate getEndOfLastWeek() {
-		            return endOfLastWeek;
-		        }
-		    }
+		// Navigate to BStackDemo Website
+		driver.get("https://www.amazon.com/");
 		
 
-	
-	
+		// Finding all the available links on webpage
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+
+		// Iterating each link and checking the response status
+		for (WebElement link : links) {
+			String url = link.getAttribute("href");
+			verifyLink(url);
+		}
+
+		driver.quit();
+	}
+
+	public static void verifyLink(String url) {
+		try {
+			URL link = new URL(url);
+			HttpURLConnection httpURLConnection = (HttpURLConnection) link.openConnection();
+			httpURLConnection.setConnectTimeout(3000); // Set connection timeout to 3 seconds
+			httpURLConnection.connect();
+
+			if (httpURLConnection.getResponseCode() == 200) {
+				System.out.println(url + " - " + httpURLConnection.getResponseMessage());
+			} else {
+				System.out.println(url + " - " + httpURLConnection.getResponseMessage() + " - " + "is a broken link");
+			}
+		} catch (Exception e) {
+			System.out.println(url + " - " + "is a broken link");
+		}
+	}
 
 }
-
-
-

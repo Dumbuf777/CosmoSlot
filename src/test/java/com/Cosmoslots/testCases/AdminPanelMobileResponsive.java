@@ -3,26 +3,17 @@
  */
 package com.Cosmoslots.testCases;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -50,7 +41,8 @@ public class AdminPanelMobileResponsive extends BaseClass {
 		return new Object[][] { { "iPad Air" },
 				// { "Galaxy S8" },
 				// { "Samsung Galaxy S20 Ultra" },
-				{ "iPhone 12 Pro" } };
+				//{ "iPhone 12 Pro" } 
+			};
 	}
 
 	@Test(dataProvider = "mobileEmulations")

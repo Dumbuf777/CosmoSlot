@@ -16,7 +16,7 @@ import com.Cosmoslots.ENUM.Constant;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.pageObjects.WithdrawRequest;
@@ -335,7 +335,7 @@ public class InvitedPlayers extends BaseClass {
 	public void Dc_TC_PlayerProfile_PlayerTransactionGraph() throws InterruptedException {
 			test = extentCreateTest("TC - As an Admin I must be able to view the player transaction graph of only the current month");
 			UserPage up = new UserPage(driver);
-			LobbyPage lp= new  LobbyPage(driver);
+			LobbyPage_Old lp= new  LobbyPage_Old(driver);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 
 			gotoTab(driver, 0);

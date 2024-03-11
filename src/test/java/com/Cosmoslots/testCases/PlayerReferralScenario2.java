@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.utilities.BaseClass;
 
  
@@ -301,7 +301,7 @@ public class PlayerReferralScenario2 extends BaseClass
 	public void RedirectPlayerProfilesetting() throws InterruptedException
 	{
 		test.info("Check Number of Level Wise Referral Bonus");
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		gotoTab(driver, 0);
 //		lb.clicklobbymanagement();
 //		Thread.sleep(500);
@@ -333,7 +333,7 @@ public class PlayerReferralScenario2 extends BaseClass
 	    test.info("Set player setting condition in store ");
 		List<WebElement> toggleButtons = driver.findElements(By.xpath("//mat-slide-toggle"));
 //		System.out.println(toggleButtons.size());
-		LobbyPage lb = new LobbyPage(driver);	
+		LobbyPage_Old lb = new LobbyPage_Old(driver);	
 	    
 		for (int i = 8; i < toggleButtons.size(); i++) {
 			WebElement toggle = toggleButtons.get(i);

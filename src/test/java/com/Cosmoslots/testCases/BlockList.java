@@ -10,21 +10,21 @@ import org.testng.annotations.Test;
 import com.Cosmoslots.ENUM.Constant;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.utilities.BaseClass;
 
 //transaction history cancel click-action view
 
 public class BlockList extends BaseClass
 {
-	private LobbyPage lb ;
+	private LobbyPage_Old lb ;
 	private CommonCosmo cc ;
 	private GuestPlayers gp ;
 	
 	@Test
 	public void A_TC_Block_PlayerData_Country() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc = new CommonCosmo(driver);
 		 gp = new GuestPlayers(driver);
 		
@@ -76,7 +76,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void Ba_TC_Block_PlayerData_Email() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc=new CommonCosmo(driver);
 		 gp=new GuestPlayers(driver);
 		
@@ -133,7 +133,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void Bc_TC_Block_PlayerData_firstName() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc=new CommonCosmo(driver);
 		
 		test = extentCreateTest("firstName- Block Player Data Page");
@@ -189,7 +189,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void Bd_TC_Block_PlayerData_lastName() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc=new CommonCosmo(driver);
 		
 		test = extentCreateTest("lastName-Block Player Data Page");
@@ -244,7 +244,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void Be_TC_Block_PlayerData_phone() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc=new CommonCosmo(driver);
 		
 		test = extentCreateTest("phone-Block Player Data Page");
@@ -302,7 +302,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void C_TC_Block_ip_create() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc = new CommonCosmo(driver);
 		
 		test = extentCreateTest("Block Player Data Page by IP create new");
@@ -360,7 +360,7 @@ public class BlockList extends BaseClass
 	{
 		test = extentCreateTest("Block Player Data Page by IP search");
 		
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc = new CommonCosmo(driver); 
 		Thread.sleep(500);
 		//-----------Search news-----------
@@ -375,7 +375,7 @@ public class BlockList extends BaseClass
 	@Test 
 	public void E_TC_Block_IP_status() throws IOException, InterruptedException 
 	{
-		lb = new LobbyPage(driver);
+		lb = new LobbyPage_Old(driver);
 		cc=new CommonCosmo(driver);
 		gp=new GuestPlayers(driver);
 		
@@ -449,7 +449,7 @@ public class BlockList extends BaseClass
 	@Test
 	public void F_TC_Block_IP_Edit() throws IOException, InterruptedException 
 	{
-		 lb = new LobbyPage(driver);
+		 lb = new LobbyPage_Old(driver);
 		 cc=new CommonCosmo(driver);
 		
 		test = extentCreateTest("Block Player Data Page by IP edit new");
@@ -483,7 +483,7 @@ public class BlockList extends BaseClass
 	public void G_TC_Block_IP_delete() throws IOException, InterruptedException 
 	{
 		test = extentCreateTest("Block Player Data Page by IP delete");
-		lb = new LobbyPage(driver);
+		lb = new LobbyPage_Old(driver);
 		cc = new CommonCosmo(driver); 
 	
 			

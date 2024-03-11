@@ -1,6 +1,8 @@
 package com.Cosmoslots.ENUM;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -24,7 +26,7 @@ public class Constant {
 	public static String randNum2 = RandomStringUtils.randomNumeric(2);
 
 	public static String randomString = RandomStringUtils.randomAlphabetic(4); 
-	public static String AnnouncementTitle="announcement"+RandomStringUtils.randomAlphabetic(6);
+	public static String AnnouncementTitle="announcement"+RandomStringUtils.randomNumeric(6);
 	public static Calendar today = Calendar.getInstance();
 	public static String month = today.get(Calendar.DATE) + "";
 	public static int DateInt = (int) Integer.parseInt(month);
@@ -40,9 +42,76 @@ public class Constant {
 
 	//User Management variables
 	
-	
+	public static String r = RandomStringUtils.randomAlphanumeric(4);
+	public static List<String> shift = new ArrayList<String>();
+	public static List<String> shiftweb = new ArrayList<String>();
+	public static List<String> refcodeArray = new ArrayList<String>();
+	public static int TotalStorePackage = 0;
+	public static int purchasebool = 0;
+	public static int pvr = 0;
+	public static int parentcount = 0;
 	
 	//Pankaj
+	public static String[] strAr = { "Master ", "Distributor ", "Agent ", "Store ", "POS " };
+	public static String[] parentuser1 = { " Gameium Admin " };
+	public static List<String> emailArray = new ArrayList<String>();
+	public static int BonusGL = 100;
+	public static int BonusSL = 100;
+	public static int numberOfReferrals = 1;
+	public static int rechargeAmount = 1;
+	public static int nameBonusLevel_Increase = 0;
+	public static int numberOfLevel = 3;
+	public static String customPackageAdmin = "";
+	public static String AdminDashboard = "/dashboard";
+    public static String AdminPlayerProfile = "/player/list";
+    public static String AdminGuestPlayer = "/guest-player/list";
+    public static String AdminWithdrawRequests = "/payment/withdraw";
+    public static String AdminWalletWithdrawRequests = "/wallet/withdraw";
+    public static String AdminWalletdeposit = "/wallet/deposit";
+    public static String AdminPurchaseHistory = "/payment/list";
+    public static String AdminBlockUserdata = "/blocked-list/by-user-deta";
+    public static String AdminBlockByIP = "/blocked-list/by-ip";
+    public static String AdminJackpotWins = "/payment/jackpotwins";
+    public static String AdminPlayerDeletion = "/player-deletion-history/list";
+    public static String AdminprospectivePlayers = "/prospective-players/list";
+    public static String AdminLobbyList = "/lobby/list";
+    public static String AdminAccessControl = "/user/access-control";
+    public static String AdminUserRole = "/user/role";
+    public static String AdminUserControl = "/user/user-control";
+    public static String AdminUserAdd = "/user/user-control/add";
+    public static String AdminOrgChart = "/user/org-list";
+    public static String AdminSupport = "/support/list";
+    public static String AdminContactDetails = "/support/contact-details";
+    public static String AdminChat = "/chat/list";
+    public static String AdminHelpPlayer = "/help-player";
+    public static String AdminNotification = "/notification/list";
+    public static String AdminAnnouncement = "/announcement/list";
+    public static String AdminDownloadList = "/download/list";
+    public static String AdminChatProspectiveview = "/chat/prospective/view";
+    public static String AdminSettingMyProfile = "/setting/my-profile";
+    public static String AdminDevelopertools = "developertools/master-developer-tools";
+    public static String AdminMasterSettings = "/setting/master-settings";
+    public static String AdminChangePassword = "/setting/change-password";
+
+    public static String WebsitePlayerProfile = "/profile";
+    public static String WebsitePackages = "/profile?tab=packages";
+    public static String WebsiteStats = "/profile?tab=stats";
+    public static String WebsiteBonuses = "/profile?tab=bonuses";
+    public static String WebsiteWithdraw = "/profile?tab=withdraw";
+    public static String WebsiteTransactions = "/profile?tab=transactions";
+    public static String WebsiteSupports = "/profile?tab=support";
+    public static String WebsiteGameTransations = "/profile?tab=game-transactions";
+    public static String WebsiteAnnoucement = "/profile?tab=announcement";
+    public static String WebsiteVerify = "/profile?tab=verify";
+    public static String WebsiteWallet = "/profile?tab=wallet";
+    public static String WebsiteGames = "/games";
+    public static String WebsiteAboutus = "/about-us";;
+    public static String WebsitePromotions = "/promotions";
+    public static String WebsiteNews = "/news";;
+    public static String WebsiteContactus = "/contact-us";
+    public static String WebsiteFreeSpin = "/earn-free-spin";
+    public static String WebsiteFunzone = "/funzone";
+    public static String WebsiteDownload = "/download";
 //	public static ReadConfig readconfig = new ReadConfig();
 //
 //	public static String r = RandomStringUtils.randomAlphanumeric(4);

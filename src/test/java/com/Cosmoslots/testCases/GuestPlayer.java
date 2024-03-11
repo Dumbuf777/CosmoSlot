@@ -15,11 +15,12 @@ public class GuestPlayer extends BaseClass {
 	private PlayerProfile pp ;
 	private GuestPlayers gp ;
 	private CommonCosmo cc ;
+	
 	@Test
 	public void B_TC_GuestPlayersTest_GF1762() throws InterruptedException, IOException {
 		test = extentCreateTest("Guest Player -> Redirect");
-		test.info("TestCase started 1762 - As an admin user I should able to view Add Player screen by clicking on the Add Player button");
-		pp= new PlayerProfile(driver);		
+		test.info("TC - As an admin user I should able to view Add Player screen by clicking on the Add Player button");
+		pp = new PlayerProfile(driver);		
 		gp = new GuestPlayers(driver);
 		cc = new CommonCosmo(driver);
 		pp.clickOnPlayerManagement();
@@ -236,7 +237,7 @@ public class GuestPlayer extends BaseClass {
 				test.info("Entered DialCode Successfully");
 				gp.setPhone(Constant.randNum);
 				test.info("Entered Phone Successfully");
-//				gp.editCountry("United States");
+				gp.editCountry("United States");
 //				test.info("Entered Country Successfully");
 //				Thread.sleep(300);
 //				gp.setState("California");

@@ -17,18 +17,21 @@ import com.Cosmoslots.pageObjects.WithdrawRequest;
 import com.Cosmoslots.utilities.BaseClass;
 
 
-public class CountTotalST extends BaseClass {
+public class CountTotalST2 extends BaseClass {
 	private PlayerProfile pp;
 	private WithdrawRequest wr;
 	private LobbyPage_Old lp;
 	private GuestPlayers gp;
 	private UserPage up;
 	
-	public enum Page {ManageToken, Purchases, WithdrawRequest, PlayerLedger, GameTransaction, AppliedCoupons,};
+	public enum Page {
+		ManageToken, Purchases, WithdrawRequest, PlayerLedger, GameTransaction, AppliedCoupons,};
 
-	public enum Store {Packages, CustomPackages, Bonus, LobbyJackpot,};
+	public enum Store {
+		Packages, CustomPackages, Bonus, LobbyJackpot,};
 
-	public enum User {TokenLedger, PlayerCustomPkgPurchase,};
+	public enum User {
+		TokenLedger, PlayerCustomPkgPurchase,};
 
 	@Test
 	public void A_TC_Count_Total_PlayerProfile() throws InterruptedException {

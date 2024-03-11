@@ -337,7 +337,7 @@ public class OldViewPOM extends ExtentManager {
 	
 	
 	public OldViewPOM CreateAnnouncement() throws InterruptedException {
-		LobbyPage lb = new LobbyPage(ldriver);
+		LobbyPage_Old lb = new LobbyPage_Old(ldriver);
 		UserPage up = new UserPage(ldriver);
 		CommonCosmo cc = new CommonCosmo(ldriver);
 		

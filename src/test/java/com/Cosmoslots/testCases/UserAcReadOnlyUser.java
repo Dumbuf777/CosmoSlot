@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.PurchaseHistory;
@@ -276,7 +276,7 @@ public class UserAcReadOnlyUser extends BaseClass {
 		String[] StoreDashboard = {"Packages", "Custom Packages","Bonus","Store Coupon","Withdraw Settings","App Marketing","Player Setting", };
 	
 
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		PlayerProfile pp = new PlayerProfile(driver);
 
 		lp.clicklobbymanagement();

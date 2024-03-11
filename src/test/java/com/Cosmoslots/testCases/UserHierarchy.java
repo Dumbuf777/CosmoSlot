@@ -3,6 +3,9 @@
  */
 package com.Cosmoslots.testCases;
 
+import java.util.HashMap;
+import java.util.Random;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -10,6 +13,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
+import com.Cosmoslots.pageObjects.LobbyPage;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -34,6 +38,11 @@ public class UserHierarchy extends BaseClass {
 	String userrole[] = { "GameiumAdmin", "Master", "Distributor", "SubDistributor", "Store", "POS" };
 	String parentRole[] = { "Gameium Admin", "Master", "Distributor", "Sub Distributor", "Store", "POS" };
 	String acceslevel[] = { "GameiumAdmin", "Master", "Distributor", "SubDistributor", "Store", "POS" };
+	public String parentString = "";
+	public HashMap<String, String> map = new HashMap<String, String>();
+	public String codeArray = "";
+	public String refcode = bc.randomSpecial(8);// "code" + randNum;
+	int randomforuser = new Random().nextInt(10000);
 		
 //	@Test
 	public void A_TC_UserHierarchy_CreateNewAccessControl() throws InterruptedException
@@ -193,6 +202,104 @@ public class UserHierarchy extends BaseClass {
 			}
 		}
 	}
+	
+	// pankaj
+    public void CreateNewUsers1(String roles, String stores, String parentuser) throws InterruptedException {
+
+//        test = extentCreateTest(" Create New Users " + roles);
+//        test.info("TestCase started Create New Users. " + roles);
+        
+        GuestPlayers gp = new GuestPlayers(driver);
+        UserPage up = new UserPage(driver);
+        LobbyPage lb = new LobbyPage(driver);
+
+        String userFirst = Fakefirstname();
+        userFirst = userFirst.replaceAll("'", "");
+        String userLast = Fakelastname().replaceAll("'", "");
+    //  userLast = userLast.replaceAll("'", "");
+        parentString = " " + userFirst + " " + userLast + " ";
+        String userEmail =( userFirst + userLast + randomestring() + "@yopmail.com").replaceAll("'", "");
+        //userEmail = userEmail.replaceAll("'", "");
+        // codeArray.add("abc123");
+        Thread.sleep(2000);
+        up.ClickOnUserProfile();
+        up.ClickOnBack();
+
+        if (up.verifyUserProfileHeader() == true) {
+            test.info("Opened User Profile Successfully");
+            up.ClickonCreateNewBtn();
+
+            if (up.verifycreateUserProfileHeader() == true) {
+                Thread.sleep(2000);
+                gp.selectUserRole(roles);
+                Thread.sleep(1000);
+                gp.selectStore(stores);
+                Thread.sleep(1000);
+                gp.selectparentuser1(parentuser);
+                Thread.sleep(1000);
+
+                // remove this in 1.2.0
+                if (userFirst.length() >= 5) {
+                    userFirst = userFirst.substring(0, 5);
+                }
+                gp.setFirstName(userFirst);
+                Thread.sleep(1000);
+                gp.setLastName(userLast);
+                Thread.sleep(1000);
+                gp.selectgender("Male");
+                Thread.sleep(1000);
+                username = userFirst + "_" + roles + "_" + randomforuser;
+                username = username.replaceAll(" ", "_");
+                System.out.println("username for " + roles + " is: = " + username);
+                gp.setDisplayName(username);
+                Thread.sleep(1000);
+                gp.Designation.sendKeys(roles);
+                Thread.sleep(1000);
+                gp.setEmail(userEmail);
+                Thread.sleep(1000);
+                if (roles.equalsIgnoreCase("Store ")) {
+                    map.put(roles, username);
+                    System.out.println("value for " + roles + " is: = " + map.get(roles));
+                }
+
+                if (roles.equalsIgnoreCase("POS ")) {
+                    up.clickToRegistrationCode(regCode);
+                    codeArray = regCode;
+                    System.out.println("invite code->" + regCode);
+                }
+                gp.setCountry(country);
+                Thread.sleep(1000);
+                gp.setState(state);
+                Thread.sleep(1000);
+                gp.setsingleTransactionSweepTokenLimit(PTSTL);
+                Thread.sleep(1000);
+                gp.setdailySweepTokenLimit(PDTSTL);
+                Thread.sleep(1000);
+                lb.pageScroll("end");
+                Thread.sleep(1000);
+                lb.ClickToSave();
+
+                // up.verifyUser(userEmail, roles);
+                if (driver.findElements(By.xpath("//span[text()=\"User save successfully\"]")).size() > 0) {
+                    test.pass("Successfully Added  New User " + roles + " in User Management->Users List." + roles,
+                            extentScreenshot());
+                    if (driver
+                            .findElement(By.xpath("//tbody//tr[1]//td[normalize-space()='" + userEmail + "']")) != null
+                            && driver.findElement(
+                                    By.xpath("//tbody//tr[1]//td[contains(text(),'" + roles + "')]")) != null) {
+                        test.pass("successfuly add user " + roles + " in Users List. with email  -> " + userEmail,
+                                extentScreenshot());
+                    } else {
+                        test.fail("Something Wrong!To View Added User in Users List.", extentScreenshot());
+                    }
+                } else {
+                    test.fail("Something Wrong!To View Added User Management->Users List.", extentScreenshot());
+                }
+
+                Thread.sleep(5000);
+            }
+        }
+    }
 	
 //	public void A_TC_CreateAccessControl_AccessLevelHierarchy() throws InterruptedException {
 //	test = extentCreateTest("creating Access Control-->Access Level Hierarchy ");

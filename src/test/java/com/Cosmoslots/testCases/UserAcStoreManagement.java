@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.SupportManagement;
@@ -59,7 +59,7 @@ public class UserAcStoreManagement extends BaseClass {
 	@Test
 	public void Aa_TC_AccessControlToggleStoreManagement() throws InterruptedException, IOException 
 	{
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		UserPage up = new UserPage(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
 		CommonCosmo cc = new CommonCosmo(driver);
@@ -122,7 +122,7 @@ public class UserAcStoreManagement extends BaseClass {
 
 	@Test
 	public void B_TC_AccessControlofStoreManagement_StoreListing() throws InterruptedException {
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 	
 		test = extentCreateTest("Access Control - Store Management -> Store Listing ");
 
@@ -150,7 +150,7 @@ public class UserAcStoreManagement extends BaseClass {
 		String[] AC_Store = { "Store Profile & Dashboard", "Store Package", "Custom Package", "Games", "Store Bonuses","Store Jackpot", "Store Coupon", "Withdraw Settings", "App Settings", "Website Settings","Store Settings", "Corporation Details","Social Media Settings","App Marketing",};
 		for (int i = 0; i < AC_Store.length; i++) {
 
-			LobbyPage lp = new LobbyPage(driver);
+			LobbyPage_Old lp = new LobbyPage_Old(driver);
 			UserPage up = new UserPage(driver);
 			PlayerProfile pp = new PlayerProfile(driver);
 
@@ -196,7 +196,7 @@ public class UserAcStoreManagement extends BaseClass {
 		String[] AC_Store = { "Tab Access", "Sign Up" };
 		for (int i = 0; i < AC_Store.length; i++) {
 
-			LobbyPage lp = new LobbyPage(driver);
+			LobbyPage_Old lp = new LobbyPage_Old(driver);
 			UserPage up = new UserPage(driver);
 			PlayerProfile pp = new PlayerProfile(driver);
 
@@ -436,7 +436,7 @@ public class UserAcStoreManagement extends BaseClass {
 	public void AccessControlToggle(String str) throws InterruptedException {
 		UserPage up = new UserPage(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
-      	LobbyPage lp= new LobbyPage(driver);
+      	LobbyPage_Old lp= new LobbyPage_Old(driver);
 		CommonCosmo cc = new CommonCosmo(driver);
 		
         gotoTab(driver, 0);

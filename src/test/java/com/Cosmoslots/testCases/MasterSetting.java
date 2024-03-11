@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.utilities.BaseClass;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 
@@ -36,8 +36,8 @@ public class MasterSetting extends BaseClass
 	String Search_BonusName="Registration";
 	String Upload_Icon=UploadImage;  //./Cosmoslots/target/image/2_mb.jpg
 	String GameName="FOT";
-	WebElement OwnerLobbyType=LobbyPage.OwenerBasedradio;
-	WebElement AppLobbyType=LobbyPage.AppBasedradio;
+	WebElement OwnerLobbyType=LobbyPage_Old.OwenerBasedradio;
+	WebElement AppLobbyType=LobbyPage_Old.AppBasedradio;
 	String Country="India";
 	String LobbyDescription= "This is just for AutoTesting";
 	String SearchAddPlayerURL="yopmail";
@@ -105,7 +105,7 @@ public class MasterSetting extends BaseClass
 		Thread.sleep(1000);
 		
 		test.info("TestCase started view Lobby_Version- As an admin user I should be able to view Lobby_Version");	
-		LobbyPage lb = new LobbyPage(driver);		
+		LobbyPage_Old lb = new LobbyPage_Old(driver);		
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		
@@ -161,7 +161,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Store Maintenance");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		Thread.sleep(2000);
@@ -207,7 +207,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Lobby Version delete"); 
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		lb.LobbyInfo_Click();
@@ -292,7 +292,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Lobby General Pages"); 
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		lb.MasterSettings_Click();
 		Thread.sleep(1000);
@@ -433,7 +433,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Lobby Settings"); 
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		Thread.sleep(500);
@@ -507,7 +507,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Settings - Promotion Create");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		lb.MasterSettings_Click();
 		Thread.sleep(500); 
@@ -522,7 +522,7 @@ public class MasterSetting extends BaseClass
 		test.info("Click to create Promotion" );
 		
 		lb.SetNewsTitle(Promotion_Search);
-		LobbyPage.description_news.sendKeys("this is testing to description promotion");
+		LobbyPage_Old.description_news.sendKeys("this is testing to description promotion");
 		lb.SetNewsicon(Upload_Icon);
 		Thread.sleep(2000);
 		
@@ -556,7 +556,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Verify last added Promotion");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 		
@@ -587,7 +587,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Verify all Promotion");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 		
@@ -618,7 +618,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("master Settings - Promotion Search");
 		//test.info("Promotion -TestCase started view Lobby_WebsiteSetting- As an admin user I should be able to view Lobby_WebsiteSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	
 		//-----------Search news-----------
@@ -634,7 +634,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("master Settings - Promotion Edit");
 		//test.info("Promotion -TestCase started view Lobby_WebsiteSetting- As an admin user I should be able to view Lobby_WebsiteSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	
 		//------------------Edit Promotion------------
@@ -643,8 +643,8 @@ public class MasterSetting extends BaseClass
 		lb.clickToEdit();  
 		lb.SetNewsTitle("Edit "+Promotion_Search);
 		//String str="unlock game"+randNum;
-		LobbyPage.description_news.clear();
-		LobbyPage.description_news.sendKeys("edit promotion"+Promotion_Search);
+		LobbyPage_Old.description_news.clear();
+		LobbyPage_Old.description_news.sendKeys("edit promotion"+Promotion_Search);
 		lb.SetNewsicon(Upload_Icon);
 		
 		test.info("Entered title = <b>"+"Edit "+Promotion_Search+"</b>");
@@ -682,7 +682,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("master Settings - Promotion Status");
 		test.info("Promotion -TestCase started view Lobby_WebsiteSetting- As an admin user I should be able to view Lobby_WebsiteSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	
 		//status active/inactive
@@ -752,7 +752,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("promotion view");
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 	 //CHECK VIEW AND UNCOMMENT
 		
@@ -797,7 +797,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("master Settings - Promotion Delete");
 		//test.info("Promotion -TestCase started view Lobby_WebsiteSetting- As an admin user I should be able to view Lobby_WebsiteSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	
 			
@@ -836,7 +836,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Settings - HomePage Create");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		
 		Thread.sleep(500); 
@@ -893,7 +893,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Settings - HomePage Edit");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	
 		//------------------Edit Promotion------------
@@ -946,7 +946,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Homepage view");
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);	 
 		
 		if(driver.findElements(By.xpath("(//a[@title='View'])[1]")).size() > 0)
@@ -987,7 +987,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Settings - Homepage Delete");
  
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 				
 		//-----------delete Promotion-----------
@@ -1028,7 +1028,7 @@ public class MasterSetting extends BaseClass
 		test = extentCreateTest("Master Settings - News Create");
 
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		Thread.sleep(500); 
 		lb.MasterSettings_Click();
@@ -1042,7 +1042,7 @@ public class MasterSetting extends BaseClass
 		test.info("Click to create news" );
 		lb.SetNewsTitle(News_Create);
 		
-		LobbyPage.description_news.sendKeys("this is testing");
+		LobbyPage_Old.description_news.sendKeys("this is testing");
 		lb.SetNewsicon(Upload_Icon);
 		Thread.sleep(3000);
 		
@@ -1076,7 +1076,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Verify last added News");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 		
@@ -1107,7 +1107,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Verify all News");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 		
@@ -1138,7 +1138,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - News Search");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		 
 //		lb.clickToNews();
@@ -1155,7 +1155,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - News Status");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		
 		//status active/inactive
@@ -1223,7 +1223,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - News Edit");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
  		
 		//------------------Edit news------------
@@ -1233,8 +1233,8 @@ public class MasterSetting extends BaseClass
 
 		lb.SetNewsTitle("title1"+randNum);
 		String str="title1"+randNum;
-		LobbyPage.description_news.clear();
-		LobbyPage.description_news.sendKeys("this is testing edit news");
+		LobbyPage_Old.description_news.clear();
+		LobbyPage_Old.description_news.sendKeys("this is testing edit news");
 		lb.SetNewsicon(Upload_Icon);
 		Thread.sleep(3000);
 				
@@ -1275,7 +1275,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("News view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 	
 		
@@ -1314,7 +1314,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - News Delete");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		 
 	
@@ -1353,7 +1353,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - FAQ Create");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		 
 		Thread.sleep(500); 
@@ -1408,7 +1408,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - FAQ Edit");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		//Working
 		//------------------Edit FAQ------------
@@ -1445,7 +1445,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - FAQ view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 	 
 		if(driver.findElements(By.xpath("(//a[@title='View'])[1]")).size() > 0)
@@ -1485,7 +1485,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - FAQ Status");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		//Working
 		 //status active/inactive
@@ -1554,7 +1554,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - FAQ Delete");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		//Working
 		
@@ -1593,7 +1593,7 @@ public class MasterSetting extends BaseClass
 		test = extentCreateTest("Master Settings - Meta Data Create");
 
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		
 		Thread.sleep(1000); 
@@ -1610,8 +1610,8 @@ public class MasterSetting extends BaseClass
 		{
 		lb.SetNewsTitle(metadata_title);		
 		lb.Set_MetaData_tags("Redemption Policy1");
-		LobbyPage.description.clear();
-		LobbyPage.description.sendKeys("this is testing for Redemption Policy");
+		LobbyPage_Old.description.clear();
+		LobbyPage_Old.description.sendKeys("this is testing for Redemption Policy");
 		Thread.sleep(500);
 		lb.Set_MetaData_Page(metadata_title);
 		Thread.sleep(200);
@@ -1652,7 +1652,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - Meta Data Search");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		
 		//-----------Search news-----------
@@ -1668,7 +1668,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - Meta Data Edit");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	 
 	
@@ -1682,8 +1682,8 @@ public class MasterSetting extends BaseClass
 			lb.SetNewsTitle(metadata_title);		
 		//	lb.Set_MetaData_tags("Redemption Policy1");
 		//	lb.Set_MetaData_Page(metadata_title);
-			LobbyPage.description.clear();
-			LobbyPage.description.sendKeys("\n"+"this is testing for Redemption Policy");
+			LobbyPage_Old.description.clear();
+			LobbyPage_Old.description.sendKeys("\n"+"this is testing for Redemption Policy");
 		
 			Thread.sleep(1000);
 		
@@ -1723,7 +1723,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Meta Data view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 	 
 		if(driver.findElements(By.xpath("(//a[@title='View'])[1]")).size() > 0)
@@ -1763,7 +1763,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - Meta Data Delete");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		 
 	
@@ -1803,7 +1803,7 @@ public class MasterSetting extends BaseClass
 		test = extentCreateTest("Master Settings - Meta Data Create");
 
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		
 		Thread.sleep(1000); 
@@ -1856,7 +1856,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - ReleaseNotes Edit");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 	 
 	
@@ -1904,7 +1904,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("ReleaseNotes view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 	 
 		if(driver.findElements(By.xpath("(//a[@title='View'])[1]")).size() > 0)
@@ -1946,7 +1946,7 @@ public class MasterSetting extends BaseClass
 	{
 		test = extentCreateTest("Master Settings - ReleaseNotes Delete");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver); 
 		 
 	

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.Cosmoslots.ENUM.MatErrorMsg;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -17,7 +17,7 @@ import com.Cosmoslots.utilities.BaseClass;
  *
  */
 public class CashOnlyStore extends BaseClass {
-	private LobbyPage lp;
+	private LobbyPage_Old lp;
 	private CommonCosmo cc;
 	private UserPage up;
 	private GuestPlayers gp;
@@ -26,7 +26,7 @@ public class CashOnlyStore extends BaseClass {
 	public void A_TC_CashOnly_Store() throws InterruptedException {
 		test = extentCreateTest("Cash only store edit");
 		test.info("As an Admin I should be able to verify the cash only store toggle is disable ");
-		lp = new LobbyPage(driver);
+		lp = new LobbyPage_Old(driver);
 		gotoTab(driver, 0);
 		lp.GoToStoreEdit("CASHONLY");
 		if (lp.cashOnly_toggle.getAttribute("class").contains("disabled")) {

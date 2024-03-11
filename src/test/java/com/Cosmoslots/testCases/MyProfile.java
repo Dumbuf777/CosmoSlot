@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.MyProfiles;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.UserPage;
@@ -315,7 +315,7 @@ public class MyProfile extends BaseClass {
 				"TestCase started As an admin user I should be able to (Create New Tokens) in My-Profile -> Manage tokens");
 		GuestPlayers gp = new GuestPlayers(driver);
 		PlayerProfile pp = new PlayerProfile(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		// Thread.sleep(4000);
 		// gp.clickPlayerManagement1Link();
 		// pp.clickPlayerProfileLink();

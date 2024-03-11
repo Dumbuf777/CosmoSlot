@@ -5,9 +5,7 @@ package com.Cosmoslots.testCases.Old_View;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
 
-import org.apache.commons.io.FileSystemUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -19,7 +17,6 @@ import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.OldViewPOM;
-import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 import com.Cosmoslots.utilities.DateManager;
@@ -45,8 +42,8 @@ public class Old_View extends BaseClass {
 		up.clickUserProfile();
 		up.ClickOnBack();
 		if (up.UserProfile_Header != null) {
-			up.Search_Items("cosmoslotstore");
-			up.clickOnSearchEdit("cosmoslotstore");
+			up.Search_Items("cosmoslotpos");
+			up.clickOnSearchEdit("cosmoslotpos");
 			Thread.sleep(2000);
 			up.selectCheckBox_OldView();
 			up.clickToSave();
@@ -55,7 +52,7 @@ public class Old_View extends BaseClass {
 			// gotoTab(driver, 1);
 			lp.clickLogout();
 			Thread.sleep(2000);
-			Adminlogin("cosmoslotstore");
+			Adminlogin("cosmoslotpos");
 			Thread.sleep(2000);
 			for (int i = 0; i <= up.ls.size() - 1; i++) {
 				viewSection(up.ls.get(i));
@@ -364,7 +361,7 @@ public class Old_View extends BaseClass {
 		String[] str = { "Recharge", "Redeem", "Change Password", "Transaction Record", "Create Account","Reports","Active" };
 
 		test = extentCreateTest("Old view - Admin structure");
-		test.info("As an admin user I should be able to download excel admin structure in old view store user");
+		test.info("TC- As an admin I should be able to view access button to admin structure user");
 		old = new OldViewPOM(driver);
 		cc = new CommonCosmo(driver);
 		test.info("TC- As an admin I should be able to view access button to admin structure user");

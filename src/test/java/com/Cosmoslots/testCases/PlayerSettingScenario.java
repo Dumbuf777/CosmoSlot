@@ -14,7 +14,7 @@ import com.Cosmoslots.ENUM.Constant;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.utilities.BaseClass;
 
 public class PlayerSettingScenario extends BaseClass {
@@ -27,7 +27,7 @@ public class PlayerSettingScenario extends BaseClass {
 		test.info(
 				"GF-25694 : TC - As an admin, I should be able to view and access the player settings tab, so that I can manage player's data");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CosmoWebsite cw = new CosmoWebsite(driver);
 
 		lb.clicklobbymanagement();
@@ -132,7 +132,7 @@ public class PlayerSettingScenario extends BaseClass {
 		test.info(
 				"GF-25694 : TC - As an admin, I should be able to view and access the player settings tab, so that I can manage player's data");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CosmoWebsite cw = new CosmoWebsite(driver);
 		gotoTab(driver, 0);
 		lb.clicklobbymanagement();
@@ -219,7 +219,7 @@ public class PlayerSettingScenario extends BaseClass {
 		test = extentCreateTest("Store player setting - Guest to player");
 		test.info(
 				"GF-25694 : TC - As an admin, I should be able to view and access the player settings tab, so that I can manage player's data");
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CosmoWebsite cw = new CosmoWebsite(driver);
 		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
@@ -387,7 +387,7 @@ public class PlayerSettingScenario extends BaseClass {
 		boolean[] toggleSetting = { true, true, true, true, true, true, true, true, true, true, true, true, true, true,
 				true };
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CosmoWebsite cw = new CosmoWebsite(driver);
 		CommonCosmo cc = new CommonCosmo(driver);
 		PlayerReferralScenario2 prs = new PlayerReferralScenario2();
@@ -551,7 +551,7 @@ public class PlayerSettingScenario extends BaseClass {
 		List<WebElement> toggleButtons = driver.findElements(By.xpath("//mat-slide-toggle"));// span[text()='Purchase
 																								// Kyc Verification
 																								// Required']//following::mat-slide-toggle
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		for (int i = 31; i < toggleButtons.size(); i++) {
 			WebElement toggle = toggleButtons.get(i);
 			// Check if the toggle button is ON or OFF

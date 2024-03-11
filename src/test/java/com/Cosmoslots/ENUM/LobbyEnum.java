@@ -4,13 +4,13 @@ import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 import com.Cosmoslots.utilities.BaseClass;
 public enum LobbyEnum {
-	//Weburl(BaseClass.WebURL),
+	Weburl(BaseClass.WebURL),
 	playerId_Login("shrikrushna.sonkar@gameium.com"),
 	playerId_Lobby("CS-1400"),
 	default_StoreName("Cosmoslot"),
 	Lcode("AT" + new Random().nextInt(10000)), LobbyName("store-" + RandomStringUtils.randomNumeric(5)),
 	search_Storepackage("store" + Constant.randNum), 
-	//search_StorepackageName("starpack" + Constant.r), 
+	search_StorepackageName("starpack" + Constant.r), 
 	storePackageGT("500"),
 	storePackageST("500"), 
 	storePackageExtraST("100"), 
@@ -49,7 +49,8 @@ public enum LobbyEnum {
 	zenmethod("zen"),
 	Othermethod("other"), 
 	paySafeMethod("paysafe"), 
-	fishgame("yes"),
+	fishgame("yes"),PaymentID(""),
+	Upload_Icon(BaseClass.UploadImage),
 	fishCode("Fish" + Constant.randNum),
 	POSname(""), invitecode("mJXstbkG"), 
 	storePackageAdmin(""),

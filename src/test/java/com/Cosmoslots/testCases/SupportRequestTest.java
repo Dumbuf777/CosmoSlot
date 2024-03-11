@@ -19,7 +19,7 @@ import com.Cosmoslots.pageObjects.WithdrawRequest;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.utilities.BaseClass;
 

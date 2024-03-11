@@ -23,9 +23,7 @@ public enum ColumnSelectors {
 		 Status_Pending("(//span[contains(.,'Pending')])[1]"),
 		 Status_Success("(//span[contains(.,'Success')])[1]"),
 		 Status_Declined("(//span[contains(.,'Declined')])[1]"),
-		 PaperTransactionStatus("(//td[text()=' PayPer']//following::td[contains(.,' Success')])[1]")
-	
-        ;    
+		 PaperTransactionStatus("(//td[text()=' PayPer']//following::td[contains(.,' Success')])[1]");    
 	    private final String xpath;
 
 	    private ColumnSelectors(String xpath) {

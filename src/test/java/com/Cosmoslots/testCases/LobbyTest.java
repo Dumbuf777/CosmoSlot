@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.pageObjects.PurchaseHistory;
@@ -49,8 +49,8 @@ public class LobbyTest extends BaseClass
 	String Search_BonusName="Registration";
 	String Upload_Icon=UploadImage;  //./Cosmoslots/target/image/2_mb.jpg
 	String GameName="FOT";
-	WebElement OwnerLobbyType=LobbyPage.OwenerBasedradio;
-	WebElement AppLobbyType=LobbyPage.AppBasedradio;
+	WebElement OwnerLobbyType=LobbyPage_Old.OwenerBasedradio;
+	WebElement AppLobbyType=LobbyPage_Old.AppBasedradio;
 	String Country="India";
 	String LobbyDescription= "This is just for AutoTesting";
 	String SearchAddPlayerURL="yopmail";
@@ -116,7 +116,7 @@ public class LobbyTest extends BaseClass
 		Thread.sleep(2000);
 		//test.info("TestCase started lobby redirection from menu ");	
 		//test.info("URL is opened");
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	LoginPage lp = new LoginPage(driver);
 	//	GuestPlayers gp = new GuestPlayers(driver);
 		lb.clicklobbymanagement();
@@ -134,7 +134,7 @@ public class LobbyTest extends BaseClass
 		Thread.sleep(2000);
 		test.info("TestCase started create new lobby.");	
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
 		
 		lb.clicklobbymanagement();
@@ -149,7 +149,7 @@ public class LobbyTest extends BaseClass
 			lb.clickToCreate();
 			Thread.sleep(1000);
 			//lb.clickOwnerBased();
-			if(LobbyPage.OwenerBasedradio.isSelected())
+			if(LobbyPage_Old.OwenerBasedradio.isSelected())
 			{
 				test.info("Selected owner based");
 			}
@@ -202,7 +202,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("search lobby");
 		Thread.sleep(2000);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	
 		test.info("TestCase started lobby Search");
 		
@@ -262,7 +262,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store Maintenance");
 		Thread.sleep(2000);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
  		CommonCosmo CC=new CommonCosmo(driver);
 	 		
 		test.info("TestCase started Store Maintenance - As an admin user I should be able to perform Store Maintenance");
@@ -333,7 +333,7 @@ public class LobbyTest extends BaseClass
 		Thread.sleep(2000);
 		test.info("TestCase started Add Player URL Listing ");	
  	//	CommonCosmo CC=new CommonCosmo(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
  		//GuestPlayers gp = new GuestPlayers(driver);
  		
 		if(driver.findElements(By.xpath("(//a[@title='Invited Players'])[1]")).size() > 0)
@@ -411,7 +411,7 @@ public class LobbyTest extends BaseClass
 		test.info("TestCase started Copy store link - As an admin user I should be able to Copy  store link ");	
 
 		//CommonCosmo CC=new CommonCosmo(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	
 		if(driver.findElements(By.xpath("(//i[@class='ri-file-copy-line'])[1]")).size()>0)
 		{
@@ -437,7 +437,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Edit store");
 		Thread.sleep(2000);
 		//CommonCosmo CC=new CommonCosmo(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		
 		Thread.sleep(1000);
 		if(driver.findElements(By.xpath("(//a[@title='Edit'])[1]")).size() > 0)
@@ -506,7 +506,7 @@ public class LobbyTest extends BaseClass
 		Thread.sleep(2000);
 		test.info("TestCase started view Store profile - As an admin user I should be able to view Store profile");	
 		 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	  
 		//Working
 		lb.clicklobbymanagement();
@@ -558,7 +558,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Add lobby store package");
 		Thread.sleep(2000);
 		test.info("TestCase started create Lobby store Package - As an admin user I should be able to create Lobby store Package");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -602,7 +602,7 @@ public class LobbyTest extends BaseClass
 		lb.LobbyPackage_Gametoken(StorePackageGT);
 		lb.LobbyPackage_Sweeptoken(StorePackageST);
 		lb.LobbyPackage_extraSweeptoken("100");
-		LobbyPage.description.sendKeys("this is testing store package");
+		LobbyPage_Old.description.sendKeys("this is testing store package");
 		Thread.sleep(1000);
 		
 		lb.ClickToSave();		
@@ -672,7 +672,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Verify last added Store Package");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		PlayerProfile pp=new PlayerProfile(driver);
 		GuestPlayers gp=new GuestPlayers(driver);
 //		lb.MasterSettings_Click();
@@ -800,7 +800,7 @@ public class LobbyTest extends BaseClass
 		PlayerProfile pp=new PlayerProfile(driver);
 		PurchaseHistory pr = new PurchaseHistory(driver);
 		GuestPlayers gp=new GuestPlayers(driver);
-		LobbyPage lp=new LobbyPage(driver);
+		LobbyPage_Old lp=new LobbyPage_Old(driver);
 	
 		BaseClass.gotoTab(driver,0);
 		Thread.sleep(1500); 
@@ -856,7 +856,7 @@ public class LobbyTest extends BaseClass
 		PlayerProfile pp=new PlayerProfile(driver);
 	//	PurchaseHistory pr = new PurchaseHistory(driver);
 		GuestPlayers gp=new GuestPlayers(driver);
-		LobbyPage lp=new LobbyPage(driver);
+		LobbyPage_Old lp=new LobbyPage_Old(driver);
 		String packagename=Search_StorePackageName;
 		BaseClass.gotoTab(driver,0);
 		Thread.sleep(500); 
@@ -965,7 +965,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Verify last added Store Package");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 		
@@ -1003,7 +1003,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Verify all Packages in website");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 //		lb.MasterSettings_Click();
 		Thread.sleep(1500); 
 				
@@ -1061,7 +1061,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("lobby Store package search");
 
 		test.info("TestCase started view Store package search- As an admin user I should be able to search on Store package");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 		
 	//Working
@@ -1111,7 +1111,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Lobby Store package view");
 
 		test.info("TestCase started view Store Package - As an admin user I should be able to view on Store Package");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	CommonCosmo cc=new CommonCosmo(driver);
 	
 		//Working
@@ -1163,7 +1163,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("lobby Store package edit");
 
 		test.info("TestCase started Edit Store Package - As an admin user I should be able to Edit Store Package");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -1192,8 +1192,8 @@ public class LobbyTest extends BaseClass
 		lb.LobbyPackage_Gametoken("800");
 		lb.LobbyPackage_Sweeptoken("800");
 		lb.LobbyPackage_extraSweeptoken("150");
-		LobbyPage.description.clear();
-		LobbyPage.description.sendKeys("this is edit testing Store package...");
+		LobbyPage_Old.description.clear();
+		LobbyPage_Old.description.sendKeys("this is edit testing Store package...");
 		
 		test.info("Store package code = <b>" +Search_Storepackage+ "</b>");
 		test.info("Store package name= <b>" +"StarPack"+randomString+ "</b>");
@@ -1346,7 +1346,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store package delete");
 
 		test.info("TestCase started delete Store Package - As an admin user I should be able to delete Store Package");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -1405,7 +1405,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Create Custom Packages");
 
 		test.info("TestCase started Create Lobby Custom Packages");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 	
 		//Working
@@ -1434,7 +1434,7 @@ public class LobbyTest extends BaseClass
 		lb.LobbyPackage_Gametoken("500");
 		lb.LobbyPackage_Sweeptoken("500");
 		lb.LobbyPackage_extraSweeptoken("100");
-		LobbyPage.description.sendKeys("this is testing Custom Packages");
+		LobbyPage_Old.description.sendKeys("this is testing Custom Packages");
 		Thread.sleep(500);
 		
 //		//code for select player
@@ -1531,7 +1531,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("CustomPackages Search");
 
 		test.info("TestCase started view CustomPackage search ");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -1579,7 +1579,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("CustomPackages View");
 
 		test.info("TestCase started view CustomPackages ");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 	
 		//Working
@@ -1632,7 +1632,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("CustomPackages Edit");
 
 		test.info("TestCase started Edit CustomPackages  ");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -1670,8 +1670,8 @@ public class LobbyTest extends BaseClass
 		lb.LobbyPackage_Gametoken("800");
 		lb.LobbyPackage_Sweeptoken("800");
 		lb.LobbyPackage_extraSweeptoken("150");
-		LobbyPage.description.clear();
-		LobbyPage.description.sendKeys("this is edit testing Custom Packages...");
+		LobbyPage_Old.description.clear();
+		LobbyPage_Old.description.sendKeys("this is edit testing Custom Packages...");
 		
 //		//code for select player
 //		if(driver.findElements(By.xpath("//button[text()='Select Player']")).size() > 0)
@@ -1849,7 +1849,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("CustomPackages Delete");
 		test.info("TestCase started delete CustomPackages - As an admin user I should be able to delete CustomPackages");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 
 		//Working
@@ -1907,7 +1907,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store Game Search");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 
 		//remove this code
 		lb.clicklobbymanagement();
@@ -1960,7 +1960,7 @@ public class LobbyTest extends BaseClass
 		test.info("TestCase started Search Store_Game - As an admin user I should be able to Search Store_Game");	
 		//test.info("URL is opened");
 		//CommonCosmo CC=new CommonCosmo(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 
 		
 		Thread.sleep(1000); 
@@ -2009,7 +2009,7 @@ public class LobbyTest extends BaseClass
 		test.info("TestCase started view Store_Game - As an admin user I should be able to view Store_Game");	
 		//test.info("URL is opened");
 		//CommonCosmo CC=new CommonCosmo(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	 
 //		lb.clicklobbymanagement();
 //		Thread.sleep(1500);
@@ -2075,7 +2075,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store bonus create");
 
 		test.info("TestCase started Create Store Bonus- As an admin user I should be able to Create Store Bonus");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		// 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2101,7 +2101,7 @@ public class LobbyTest extends BaseClass
 				lb.gameToken("100");
 				lb.sweepToken("500");
 				//lb.ClickDesc();
-				LobbyPage.description.sendKeys("this is testing");
+				LobbyPage_Old.description.sendKeys("this is testing");
 				Thread.sleep(100);
 
 				
@@ -2140,7 +2140,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store bonus search");
 
 		test.info("TestCase started Search Store Bonus- As an admin user I should be able to Search Store Bonus");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	 
 		
 		//Working
@@ -2184,7 +2184,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store bonus view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2240,7 +2240,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store bonus edit");
 
 		test.info("TestCase started Edit Store Bonus- As an admin user I should be able to Edit Store Bonus");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2267,8 +2267,8 @@ public class LobbyTest extends BaseClass
 		lb.gameToken("200");
 		lb.sweepToken("800");
 		//lb.ClickDesc();
-		LobbyPage.description.clear();
-		LobbyPage.description.sendKeys("this is testing entry to edit");
+		LobbyPage_Old.description.clear();
+		LobbyPage_Old.description.sendKeys("this is testing entry to edit");
 		
 		test.info("Entered BonusName = <b>"+"Registration"+"</b>");
 		//test.info("select bonus action = <b>"+""+"</b>");
@@ -2412,7 +2412,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store bonus delete");
 
 		test.info("TestCase started delete Store Bonus- As an admin user I should be able to delete Store Bonus");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2475,7 +2475,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Add Store Coupon");
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		
 		//Working	
 //		lb.clicklobbymanagement();
@@ -2547,7 +2547,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store coupon search");
 
 		test.info("TestCase started Search Store coupon- As an admin user I should be able to Search Store coupon");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2597,7 +2597,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Edit Store Coupon");
 			
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		
 		Thread.sleep(1000); 
 		test.info("TestCase-Edit Store coupon start");
@@ -2664,7 +2664,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store coupon view");
 
- 		LobbyPage lb = new LobbyPage(driver);
+ 		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2838,7 +2838,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store coupon delete");
 
 		test.info("TestCase started delete Store coupon- As an admin user I should be able to delete Store coupon");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2897,7 +2897,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store player coupon");
 
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working
 //		lb.clicklobbymanagement();
@@ -2939,7 +2939,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("Store Withdraw settings");
 
 		test.info("TestCase started Add Store_Withdraw- As an admin user I should be able to Add Store_Withdraw");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		 
 		//Working	
 //		lb.clicklobbymanagement();
@@ -3004,7 +3004,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("lobby App settings Save");
 
 		test.info("TestCase started Lobby_AppSetting- As an admin user I should be able to view Lobby_AppSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		
 		Thread.sleep(1000);
 		
@@ -3082,7 +3082,7 @@ public class LobbyTest extends BaseClass
 		test = extentCreateTest("lobby App settings Delete");
 
 		test.info("TestCase started Lobby_AppSetting- As an admin user I should be able to view Lobby_AppSetting");	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		
 		Thread.sleep(1000); 
 		
@@ -3137,7 +3137,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Website Settings - Tab Access");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 	//	CommonCosmo cc=new CommonCosmo(driver);
 	
 	 	Thread.sleep(1000);
@@ -3208,7 +3208,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Website Settings - Sign Up");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		//CommonCosmo cc=new CommonCosmo(driver);
 		
 		Thread.sleep(1000);
@@ -3251,7 +3251,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Store Settings");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		//lb.clickViewLobby();
@@ -3306,7 +3306,7 @@ public class LobbyTest extends BaseClass
 	{
 		test = extentCreateTest("Corporation Details");
 		
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
 		
 		Thread.sleep(1000);

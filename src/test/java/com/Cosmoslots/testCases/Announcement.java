@@ -13,7 +13,7 @@ import com.Cosmoslots.ENUM.Constant;
 import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -47,8 +47,9 @@ public class Announcement extends BaseClass {
 
 	@Test(groups = "admin")
 	public void B_TC_Announcement_Add() throws IOException, InterruptedException {
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up = new UserPage(driver);
+		GuestPlayers gp = new GuestPlayers(driver);
 		CommonCosmo cc = new CommonCosmo(driver);
 
 		test = extentCreateTest("Add Announcement");
@@ -70,12 +71,14 @@ public class Announcement extends BaseClass {
 			lb.Select_AnnouncementCategory_Announcement("Game Update");
 			up.AC_Save();
 			test.info("Announcement Detail saved successfully", extentScreenshot());
+			cc.VerifyDataCheck(cc.Validation_AnnouncementDataSaveSuccessfully);
 			Thread.sleep(500);
-			if (cc.AnnouncementSaved()) {
+			if (cc.Validation_AnnouncementDataSaveSuccessfully.isDisplayed()==true) {
 				Thread.sleep(3000);
-				driver.findElement(
-						By.xpath("//td[text()='" + Constant.AnnouncementTitle + "']//following::mat-slide-toggle[1]"))
-						.click();
+				gp.Search_Items(Constant.AnnouncementTitle);
+				Thread.sleep(1000);
+				driver.findElement(By.xpath("//td[contains(text(),'" + Constant.AnnouncementTitle + "')]//following::mat-slide-toggle[1]")).click();
+				Thread.sleep(1000);
 				driver.findElement(By.xpath("//button[normalize-space()='Yes']")).click();
 				Thread.sleep(3000);
 				test.pass("Announcement save message return", extentScreenshot());
@@ -120,13 +123,7 @@ public class Announcement extends BaseClass {
 		Thread.sleep(1000);
 		cw.ClickOnAnnouncement();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("//div[contains(@class,'userDropDownBlock')]")).click();
-//		Thread.sleep(1000); 
-//		driver.findElement(By.xpath("//a[text()='Profile']")).click();
-//				
-//		Thread.sleep(2000); 
-//		driver.findElement(By.xpath("//button[text()=\"Announcement\"]")).click();
-//		Thread.sleep(1000); 
+
 		if (driver.findElement(By.xpath("//td[contains(text(),'" + announce + "')]")) != null) {
 			test.pass("Find last added Announcement on Website ->" + announce, extentScreenshot());
 
@@ -157,7 +154,7 @@ public class Announcement extends BaseClass {
 
 	@Test
 	public void C_TC_Announcement_Search() throws InterruptedException, IOException {
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 
 		test = extentCreateTest("Announcement -> Search");
 
@@ -193,7 +190,7 @@ public class Announcement extends BaseClass {
 		test.info("TestCase started - As an admin user I should able to view Announcement");
 		PlayerProfile pp = new PlayerProfile(driver);
 		WithdrawRequest wr = new WithdrawRequest(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 
 		if (driver.findElement(By.xpath("//h3[text()=\"Announcements\"]")) != null) {
 
@@ -260,7 +257,7 @@ public class Announcement extends BaseClass {
 	public void E_TC_Announcement_ActionView() throws InterruptedException, IOException {
 		test = extentCreateTest("Announcement -> Action View");
 		test.info("TestCase started As an admin user I should able to View details ");
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		WithdrawRequest wr = new WithdrawRequest(driver);
 		// Thread.sleep(4000);
 		// gp.clickPlayerManagement1Link();

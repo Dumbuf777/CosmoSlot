@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import com.Cosmoslots.ENUM.XPathEnum;
 import com.Cosmoslots.pageObjects.GuestPlayers;
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.PlayerProfile;
 import com.Cosmoslots.testCases.PlayerReferralScenario;
 import com.Cosmoslots.utilities.BaseClass;
@@ -117,7 +117,7 @@ public class IDComplyVerification extends BaseClass {
 	public void E_playerProfieVerifyWithDOB() throws InterruptedException, IOException {
 		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		test = extentCreateTest("ID Comply with DOB");
 		test.info(
@@ -188,7 +188,7 @@ public class IDComplyVerification extends BaseClass {
 	public void F_playerProfieVerifyWithCountry() throws InterruptedException, IOException {
 		PlayerProfile pp = new PlayerProfile(driver);
 		GuestPlayers gp = new GuestPlayers(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 
 		test = extentCreateTest("ID Comply with Country");
 		test.info(

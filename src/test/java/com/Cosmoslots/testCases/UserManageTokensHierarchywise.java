@@ -4,10 +4,8 @@
 package com.Cosmoslots.testCases;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +13,6 @@ import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.GuestPlayers;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.PlayerProfile;
-import com.Cosmoslots.pageObjects.SupportManagement;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -29,8 +26,6 @@ public class UserManageTokensHierarchywise extends BaseClass {
 	String packge = "COSMO50";
 	String Username[] = { GameiumUsername, MasterUsername, DistributorUsername, SubdistributorUsername, StoreUsername,POSUsername };
 	String Search[] = { "Gameiumadmin", "Master Admin", "Cosmoslot Distributor", "Cosmoslot Subdistributor","Cosmoslot Store", "cosmoslotPos" };
-	String[] month = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
-	String[] endDate = { "31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31" };
 	String paymentmethod = "Manual";
 	String GT = "1";
 	String ST = "1";

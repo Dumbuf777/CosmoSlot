@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.LoginPage;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
@@ -77,7 +77,7 @@ public class UserRoleTest extends BaseClass{
 	@Test(groups = "admin")
 	public void B_TC_UserRole_GF2_Add() throws IOException, InterruptedException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		CommonCosmo cc=new CommonCosmo(driver);
@@ -132,7 +132,7 @@ public class UserRoleTest extends BaseClass{
 	@Test(groups = "admin")
 	public void C_TC_UserRole_GF2_Search() throws IOException, InterruptedException,NullPointerException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 	
@@ -175,7 +175,7 @@ public class UserRoleTest extends BaseClass{
 	@Test(groups = "admin")
 	public void D_TC_UserRole_GF2_view() throws IOException, InterruptedException,NullPointerException 
 	{
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		
@@ -201,7 +201,7 @@ public class UserRoleTest extends BaseClass{
 	@Test(groups = "website")
 	public void E_TC_UserRole_GF2_edit() throws IOException, InterruptedException,NullPointerException 
 	{ 	
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 		UserPage up=new UserPage(driver);
 		LoginPage lp = new LoginPage(driver);
 		

@@ -18,6 +18,7 @@ import com.Cosmoslots.pageObjects.CommonCosmo;
 import com.Cosmoslots.pageObjects.CosmoWebsite;
 import com.Cosmoslots.pageObjects.GuestPlayers;
 import com.Cosmoslots.pageObjects.LobbyPage;
+import com.Cosmoslots.pageObjects.LobbyPage_Old;
 import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.utilities.BaseClass;
 
@@ -1636,7 +1637,7 @@ public class PlayersProfile extends BaseClass {
 
 		// bc.gotoTab(driver, 0);
 		PlayerProfile pp = new PlayerProfile(driver);
-		LobbyPage lb = new LobbyPage(driver);
+		LobbyPage_Old lb = new LobbyPage_Old(driver);
 
 		pp.clickOnPlayerManagement();
 		Thread.sleep(2000);
@@ -2634,7 +2635,7 @@ public class PlayersProfile extends BaseClass {
 		test = extentCreateTest(
 				"TC - As an Admin I must be able to view the player transaction graph of only the current month");
 		UserPage up = new UserPage(driver);
-		LobbyPage lp = new LobbyPage(driver);
+		LobbyPage_Old lp = new LobbyPage_Old(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		gotoTab(driver, 0);
@@ -2731,5 +2732,71 @@ public class PlayersProfile extends BaseClass {
 		test.info("TestCase Search Ended");
 
 	}
+	
+	public void PlayerProfile_InvitePlayer(String searchemail, String inviteEmail)
+            throws InterruptedException, IOException {
+        test.info("TestCase started Invite Player Details");
+
+        PlayerProfile pp = new PlayerProfile(driver);
+        GuestPlayers gp = new GuestPlayers(driver);
+        LobbyPage lb = new LobbyPage(driver);
+        PlayerRegistration_Website pr = new PlayerRegistration_Website();
+
+        Thread.sleep(2000);
+        gp.clickOnPlayerManagement();
+        test.info("Clicked on Player Management");
+        Thread.sleep(500);
+        pp.clickPlayerProfileLink();
+
+        if (driver.findElement(By.xpath("//h3[text()=\"Player Management\"]")) != null) {
+            // test.info("Already Opened Players Listing screen");
+            gp.Search_Items(searchemail);
+            test.info("Searched player(s) in Listing ->" + searchemail);
+            Thread.sleep(3000);
+            lb.clickAddPlayerURL();
+
+            if (driver.findElement(By.xpath("//h3[text()='Player(s)']")) != null) {
+                Thread.sleep(2000);
+
+//                  JavascriptExecutor js = (JavascriptExecutor) driver;
+//                  WebElement ele=driver.findElement(By.xpath("//h6[contains(text(),'Total Registered Players(via Link) - ')]"));
+//                  js.executeScript ("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", ele);
+                scrollElement("//h6[contains(text(),'Total Registered Players(via Link) - ')]");
+
+                Thread.sleep(4000);
+                lb.SearchItems(inviteEmail);
+                test.info("Searched Invited Player -><b>" + inviteEmail + "</b>");
+                Thread.sleep(3000);
+
+                if (driver
+                        .findElement(By.xpath(
+                                "//th[text()='Email']//following::tr//td[contains(@class,\"cdk-column-email\")]"))
+                        .getText().equals(inviteEmail)) {
+                    test.pass("Successfully Viewed new Registered Player in Invite list", extentScreenshot());
+                } else {
+                    test.fail("Something wrong !! To Viewed new Registered Players in invite list", extentScreenshot());
+                }
+
+                // driver.findElement(By.xpath("//a[@title='Back']")).click();
+                Thread.sleep(1000);
+            } else {
+                Assert.assertTrue(false);
+                test.fail("Something wrong !! To Viewed View Icon of Player on the player listing page",
+                        extentScreenshot());
+
+            }
+        } else {
+            test.fail("Something wrong!To Open Player Profile", extentScreenshot());
+        }
+        Thread.sleep(1000);
+    }
+	
+	public void scrollElement(String xpath) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement ele = driver.findElement(By.xpath(xpath));
+        js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", ele);
+
+    }
 
 }
