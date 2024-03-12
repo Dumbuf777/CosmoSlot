@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.Cosmoslots.ENUM.ColumnSelectors;
@@ -16,7 +17,7 @@ import com.Cosmoslots.pageObjects.UserPage;
 import com.Cosmoslots.pageObjects.WithdrawRequest;
 import com.Cosmoslots.utilities.BaseClass;
 
-
+@Listeners(com.Cosmoslots.utilities.ListenerClass.class)
 public class CountTotalST extends BaseClass {
 	private PlayerProfile pp;
 	private WithdrawRequest wr;
@@ -90,27 +91,27 @@ public class CountTotalST extends BaseClass {
 		pp.clickOnPlayerManagement();
 		pp.clickonWallet_WithdrawRequest();
 		test.info("<i><b>Count total amount wallet withdraw request</i></b>");
-		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 27));
+		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 28));
 		
 		pp.clickOnPlayerManagement();
 		pp.clickonWallet_Deposits();
 		test.info("<i><b>Count total amount wallet deposits</i></b>");
-		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 27));
+		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 28));
 		test.info("<i><b>Count total amount wallet deposits - Skrill-initiated</i></b>");
 		driver.findElement(
 				By.xpath("//mat-radio-button[@value='skrill-initiated']//child::span[@class='mat-radio-container']"))
 				.click();
-		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 27));
+		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 28));
 		test.info("<i><b>Count total amount wallet deposits - paysafe-initiated</i></b>");
 		driver.findElement(
 				By.xpath("//mat-radio-button[@value='paysafe-initiated']//child::span[@class='mat-radio-container']"))
 				.click();
-		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 27));
+		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 28));
 		test.info("<i><b>Count total amount wallet deposits - bank-card-initiated</i></b>");
 		driver.findElement(
 				By.xpath("//mat-radio-button[@value='bank-card-initiated']//child::span[@class='mat-radio-container']"))
 				.click();
-		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 27));
+		Count_Total_STGT(ColumnSelectors.Wallet_Amount.getColumnValues(), ColumnSelectors.Wallet_Amount.getColumnValues().substring(16, 28));
 	}
 
 	@Test
